@@ -1,10 +1,6 @@
 import pandas as pd
-
-
-def load_data(path):
-    df = pd.read_csv(path)
-    return df
-
+from src.data.data_loader import load_crime_data
+from src.data.data_preprocessing import preprocess_crime_data
 
 def city_hotspot_analysis(df):
 
@@ -26,10 +22,10 @@ def city_hotspot_analysis(df):
 
 
 if __name__ == "__main__":
-
-    data = load_data("data/raw/crime_dataset.csv")
-
-    hotspots = city_hotspot_analysis(data)
+    data = load_crime_data()
+    if data is not None:
+        data = preprocess_crime_data(data)
+        hotspots = city_hotspot_analysis(data)
 
     hotspots.to_csv("data/processed/city_hotspots.csv", index=False)
 

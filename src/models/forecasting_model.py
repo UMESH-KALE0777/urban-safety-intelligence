@@ -1,15 +1,9 @@
 import pandas as pd
 from statsmodels.tsa.arima.model import ARIMA
-
-
-def load_data():
-    df = pd.read_csv("data/raw/crime_dataset.csv")
-    return df
-
+from src.data.data_loader import load_crime_data
+from src.data.data_preprocessing import preprocess_crime_data
 
 def prepare_timeseries(df):
-
-    df["Date Reported"] = pd.to_datetime(df["Date Reported"], dayfirst=True)
 
     df["month"] = df["Date Reported"].dt.to_period("M")
 
@@ -38,10 +32,10 @@ def forecast(model):
 
 
 if __name__ == "__main__":
-
-    df = load_data()
-
-    series = prepare_timeseries(df)
+    df = load_crime_data()
+    if df is not None:
+        df = preprocess_crime_data(df)
+        series = prepare_timeseries(df)
 
     model = train_model(series)
 
