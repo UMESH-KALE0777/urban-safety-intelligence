@@ -44,18 +44,59 @@ def clean_text(text: str) -> str:
     text = re.sub(r'\s+', ' ', text).strip()
     return text
 
+label_map = {
+    "theft": "theft",
+    "robbery": "theft",
+    "burglary": "theft",
+    "snatching": "theft",
+
+    "assault": "assault",
+    "hurt": "assault",
+
+    "fraud": "fraud",
+    "cheating": "fraud",
+    "cyber": "fraud",
+
+    "harassment": "harassment",
+    "outraging modesty": "harassment",
+
+    "murder": "violent",
+    "kidnapping": "violent"
+}
+
+def map_labels(df):
+
+    def map_category(text):
+        text = str(text).lower()
+
+        for key in label_map:
+            if key in text:
+                return label_map[key]
+
+        return "other"
+
+    df["crime_type"] = df["crime_type"].apply(map_category)
+
+    return df
+
 def preprocess_data(df: pd.DataFrame) -> Tuple[pd.Series, pd.Series]:
     """Clean text, remove nulls, and split features/labels."""
     logger.info("Preprocessing data")
     df = df.dropna(subset=['text', 'crime_type']).copy()
+    
+    df["text"] = df["text"].str.lower()
+    
+    df = map_labels(df)
+    
+    # Remove "other" class (optional but improves accuracy)
+    df = df[df["crime_type"] != "other"]
+    
+    print(df["crime_type"].value_counts())
+    
     df['text_clean'] = df['text'].apply(clean_text)
     
     # Remove rows that became empty after cleaning
     df = df[df['text_clean'] != ""]
-    
-    # Keep only top 10 most frequent crime types
-    top_classes = df["crime_type"].value_counts().nlargest(10).index
-    df = df[df["crime_type"].isin(top_classes)]
     
     return df['text_clean'], df['crime_type']
 
