@@ -1,214 +1,196 @@
 import pandas as pd
 import numpy as np
-import pickle
-import os
-import re
+import joblib
 import logging
-from typing import Tuple, List, Optional
-from sklearn.model_selection import train_test_split
+import os
+from sklearn.pipeline import Pipeline
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score
+from sklearn.svm import LinearSVC
+from sklearn.model_selection import train_test_split, cross_val_score
+from sklearn.metrics import classification_report, confusion_matrix
+from sklearn.utils import resample
 
-# Configure logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-logger = logging.getLogger(__name__)
+# ── Logging ───────────────────────────────────────────────────
+logging.basicConfig(level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s')
+log = logging.getLogger(__name__)
 
-def load_data(file_path: str) -> pd.DataFrame:
-    """Load dataset from the specified path."""
-    try:
-        logger.info(f"Loading data from {file_path}")
-        df = pd.read_csv(file_path, low_memory=False)
-        
-        # take only 10,000 rows
-        df = df.sample(n=10000, random_state=42)
-        
-        if 'text' not in df.columns or 'crime_type' not in df.columns:
-            # specifically for the fir_dataset.csv structure
-            if 'ActSection' in df.columns and 'CrimeGroup_Name' in df.columns:
-                logger.info("Mapping 'ActSection' to 'text' and 'CrimeGroup_Name' to 'crime_type'")
-                df = df.rename(columns={'ActSection': 'text', 'CrimeGroup_Name': 'crime_type'})
-            else:
-                raise ValueError("Dataset must contain 'text' and 'crime_type' columns.")
-        return df
-    except Exception as e:
-        logger.error(f"Error loading data: {e}")
-        raise
+# ── Paths ─────────────────────────────────────────────────────
+BASE    = r'D:\urban-safety-intelligence'
+DATA    = os.path.join(BASE, 'data', 'raw', 'fir_dataset.csv')
+MDL_DIR = os.path.join(BASE, 'models')
+os.makedirs(MDL_DIR, exist_ok=True)
 
-def clean_text(text: str) -> str:
-    """Clean the raw text."""
-    if pd.isna(text):
-        return ""
-    text = str(text).lower()
-    text = re.sub(r'[^a-zA-Z\s]', '', text)
-    text = re.sub(r'\s+', ' ', text).strip()
-    return text
+# ── Step 1: Load ──────────────────────────────────────────────
+log.info("Loading dataset...")
+df = pd.read_csv(DATA, low_memory=False)   # fixes DtypeWarning
+log.info(f"Raw shape: {df.shape}")
 
-label_map = {
-    "theft": "theft",
-    "robbery": "theft",
-    "burglary": "theft",
-    "snatching": "theft",
+# ── Step 2: Use BOTH columns as text ──────────────────────────
+# ActSection has IPC details, CrimeGroup has category
+# Combine both → richer signal for TF-IDF
+df['text'] = (
+    df['CrimeGroup_Name'].fillna('').str.strip() + ' ' +
+    df['ActSection'].fillna('').str.strip()
+).str.lower()
 
-    "assault": "assault",
-    "hurt": "assault",
+# ── Step 3: Smart label mapping ───────────────────────────────
+# Map ALL CrimeGroup_Name values into clean categories
+# Based on actual values we can see in your data
 
-    "fraud": "fraud",
-    "cheating": "fraud",
-    "cyber": "fraud",
+def map_crime(crime_group):
+    cg = str(crime_group).upper().strip()
 
-    "harassment": "harassment",
-    "outraging modesty": "harassment",
+    # NOISE — remove these rows entirely
+    noise = ['KARNATAKA POLICE ACT', 'POLICE ACT', 'TAKA POLICE']
+    if any(n in cg for n in noise):
+        return None
 
-    "murder": "violent",
-    "kidnapping": "violent"
-}
+    # THEFT
+    if any(x in cg for x in [
+        'THEFT', 'BURGLARY', 'ROBBERY', 'DACOITY',
+        'SNATCHING', 'PICKPOCKET', 'MOTOR VEHICLE THEFT',
+        'CYCLE THEFT', 'STOLEN'
+    ]):
+        return 'theft'
 
-def map_labels(df):
+    # ASSAULT / VIOLENCE
+    if any(x in cg for x in [
+        'ASSAULT', 'MURDER', 'HURT', 'RIOT',
+        'KIDNAPPING', 'ABDUCTION', 'GRIEVOUS',
+        'ATTEMPT TO MURDER', 'CULPABLE HOMICIDE'
+    ]):
+        return 'assault'
 
-    def map_category(text):
-        text = str(text).lower()
+    # FRAUD / CHEATING
+    if any(x in cg for x in [
+        'FRAUD', 'CHEATING', 'FORGERY', 'COUNTERFEITING',
+        'CYBER', 'ONLINE', 'MISAPPROPRIATION', 'BREACH OF TRUST',
+        'EXTORTION', 'CORRUPTION'
+    ]):
+        return 'fraud'
 
-        for key in label_map:
-            if key in text:
-                return label_map[key]
+    # WOMEN SAFETY
+    if any(x in cg for x in [
+        'RAPE', 'MOLESTATION', 'SEXUAL', 'HARASSMENT',
+        'DOWRY', 'CRUELTY BY HUSBAND', 'INDECENT',
+        'STALKING', 'WOMEN', 'CHILD MARRIAGE'
+    ]):
+        return 'women_safety'
 
-        return "other"
+    # ACCIDENT / NEGLIGENCE
+    if any(x in cg for x in [
+        'ACCIDENT', 'MOTOR VEHICLE', 'NEGLIGENCE',
+        'FATAL', 'NON-FATAL', 'HIT AND RUN'
+    ]):
+        return 'accident'
 
-    df["crime_type"] = df["crime_type"].apply(map_category)
+    # PROPERTY CRIME
+    if any(x in cg for x in [
+        'TRESPASS', 'MISCHIEF', 'ARSON', 'DAMAGE',
+        'PROPERTY', 'BREAKING'
+    ]):
+        return 'property_crime'
 
-    return df
+    return None   # unmapped → drop
 
-def preprocess_data(df: pd.DataFrame) -> Tuple[pd.Series, pd.Series]:
-    """Clean text, remove nulls, and split features/labels."""
-    logger.info("Preprocessing data")
-    df = df.dropna(subset=['text', 'crime_type']).copy()
-    
-    df["text"] = df["text"].str.lower()
-    
-    df = map_labels(df)
-    
-    # Remove "other" class (optional but improves accuracy)
-    df = df[df["crime_type"] != "other"]
-    
-    print(df["crime_type"].value_counts())
-    
-    df['text_clean'] = df['text'].apply(clean_text)
-    
-    # Remove rows that became empty after cleaning
-    df = df[df['text_clean'] != ""]
-    
-    return df['text_clean'], df['crime_type']
+log.info("Mapping crime categories...")
+df['crime_type'] = df['CrimeGroup_Name'].apply(map_crime)
 
-def build_pipeline(
-    text_data: pd.Series, 
-    labels: pd.Series, 
-    max_features: int = 3000, 
-    test_size: float = 0.2, 
-    random_state: int = 42
-) -> Tuple[LogisticRegression, TfidfVectorizer, float]:
-    """Train the TF-IDF vectorizer and Logistic Regression model, evaluate its accuracy."""
-    logger.info("Splitting data into train and test sets")
-    
-    X_train, X_test, y_train, y_test = train_test_split(
-        text_data, labels, test_size=test_size, random_state=random_state
-    )
-    
-    logger.info("Fitting TF-IDF vectorizer")
-    vectorizer = TfidfVectorizer(max_features=max_features, stop_words='english', ngram_range=(1,2))
-    X_train_vec = vectorizer.fit_transform(X_train)
-    X_test_vec = vectorizer.transform(X_test)
-    
-    logger.info("Training Logistic Regression model")
-    model = LogisticRegression(random_state=random_state, max_iter=200)
-    model.fit(X_train_vec, y_train)
-    
-    logger.info("Evaluating model")
-    y_pred = model.predict(X_test_vec)
-    accuracy = accuracy_score(y_test, y_pred)
-    
-    return model, vectorizer, accuracy
+# ── Step 4: Drop noise rows ───────────────────────────────────
+before = len(df)
+df = df[df['crime_type'].notna()].copy()
+df = df[df['text'].str.len() > 5].copy()
+log.info(f"Dropped {before - len(df)} noise rows → {len(df)} clean rows")
 
-def save_artifacts(model: LogisticRegression, vectorizer: TfidfVectorizer, model_path: str, vectorizer_path: str) -> None:
-    """Save the trained model and vectorizer to disk."""
-    try:
-        os.makedirs(os.path.dirname(model_path), exist_ok=True)
-        os.makedirs(os.path.dirname(vectorizer_path), exist_ok=True)
-        
-        logger.info(f"Saving model to {model_path}")
-        with open(model_path, 'wb') as f:
-            pickle.dump(model, f)
-            
-        logger.info(f"Saving vectorizer to {vectorizer_path}")
-        with open(vectorizer_path, 'wb') as f:
-            pickle.dump(vectorizer, f)
-            
-        logger.info("Artifacts saved successfully")
-    except Exception as e:
-        logger.error(f"Error saving artifacts: {e}")
-        raise
+# ── Step 5: Class distribution ────────────────────────────────
+log.info("\nClass distribution:")
+print(df['crime_type'].value_counts())
 
-def predict(text: str, model: LogisticRegression, vectorizer: TfidfVectorizer) -> str:
-    """Predict the crime type for a given raw text."""
-    cleaned = clean_text(text)
-    if not cleaned:
-        raise ValueError("Input text is empty after cleaning.")
-    
-    vec = vectorizer.transform([cleaned])
-    prediction = model.predict(vec)[0]
-    return prediction
+# ── Step 6: Balance classes (upsample minorities) ─────────────
+log.info("Balancing classes...")
+max_size = df['crime_type'].value_counts().max()
+balanced = []
+for crime_type, group in df.groupby('crime_type'):
+    if len(group) < 100:   # skip classes with too few samples
+        continue
+    upsampled = resample(group,
+        replace=True,
+        n_samples=min(max_size, len(group) * 3),
+        random_state=42)
+    balanced.append(upsampled)
 
-def load_artifacts(model_path: str, vectorizer_path: str) -> Tuple[LogisticRegression, TfidfVectorizer]:
-    """Load trained model and vectorizer from disk."""
-    try:
-        logger.info("Loading model and vectorizer artifacts")
-        with open(model_path, 'rb') as f:
-            model = pickle.load(f)
-        with open(vectorizer_path, 'rb') as f:
-            vectorizer = pickle.load(f)
-        return model, vectorizer
-    except Exception as e:
-        logger.error(f"Error loading artifacts: {e}")
-        raise
+df_balanced = pd.concat(balanced).reset_index(drop=True)
+log.info(f"Balanced shape: {df_balanced.shape}")
+log.info("\nBalanced distribution:")
+print(df_balanced['crime_type'].value_counts())
 
-if __name__ == "__main__":
-    # Define paths
-    BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-    DATA_PATH = os.path.join(BASE_DIR, 'data', 'raw', 'fir_dataset.csv')
-    MODEL_DIR = os.path.join(BASE_DIR, 'models')
-    MODEL_PATH = os.path.join(MODEL_DIR, 'fir_model.pkl')
-    VECTORIZER_PATH = os.path.join(MODEL_DIR, 'vectorizer.pkl')
+# ── Step 7: Train/test split ──────────────────────────────────
+X = df_balanced['text']
+y = df_balanced['crime_type']
 
-    try:
-        if not os.path.exists(DATA_PATH):
-            logger.warning(f"Dataset not found at {DATA_PATH}. Please ensure the data file exists to train the model.")
-        else:
-            # 1. Load Data
-            df = load_data(DATA_PATH)
-            
-            # 2. Preprocess Data
-            X, y = preprocess_data(df)
-            
-            # 3. Build and Evaluate Model
-            if len(X) > 0:
-                model, vectorizer, accuracy = build_pipeline(X, y)
-                logger.info("====================================")
-                logger.info("   Model Training Completed         ")
-                logger.info("====================================")
-                logger.info(f"Training/Validation Accuracy: {accuracy:.4f}")
-                
-                # 4. Save Artifacts
-                save_artifacts(model, vectorizer, MODEL_PATH, VECTORIZER_PATH)
-                
-                # 5. Make a Sample Prediction
-                sample_text = "Thieves broke into the house from the back door and stole gold jewelry and cash."
-                logger.info("====================================")
-                logger.info(f"Sample Input: '{sample_text}'")
-                pred = predict(sample_text, model, vectorizer)
-                logger.info(f"Predicted Crime Type: {pred}")
-                logger.info("====================================")
-            else:
-                logger.error("No valid data available after preprocessing.")
-            
-    except Exception as e:
-        logger.error(f"Pipeline execution failed: {e}")
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42, stratify=y)
+
+# ── Step 8: Build pipeline ────────────────────────────────────
+pipeline = Pipeline([
+    ('tfidf', TfidfVectorizer(
+        ngram_range=(1, 2),      # drop trigrams → faster on 1M rows
+        max_features=30000,      # reduced → still accurate
+        min_df=3,
+        sublinear_tf=True,
+        strip_accents='unicode',
+        analyzer='word',
+    )),
+    ('clf', LinearSVC(           # 10x faster than LogisticRegression
+        C=1.0,                   # on large datasets
+        class_weight='balanced',
+        max_iter=2000,
+        random_state=42,
+    ))
+])
+
+# ── Step 9: Cross-validation first ───────────────────────────
+log.info("Running 3-fold cross-validation on sample...")
+# Use smaller sample for CV — no need to CV on 1.3M rows
+X_cv_sample = X_train.sample(n=50000, random_state=42)
+y_cv_sample = y_train[X_cv_sample.index]
+cv_scores = cross_val_score(pipeline, X_cv_sample, y_cv_sample, cv=3, scoring='accuracy')
+log.info(f"CV Accuracy: {cv_scores.mean():.4f} (+/- {cv_scores.std():.4f})")
+
+# ── Step 10: Train final model ────────────────────────────────
+log.info("Training final model...")
+pipeline.fit(X_train, y_train)
+
+# ── Step 11: Evaluate ─────────────────────────────────────────
+y_pred = pipeline.predict(X_test)
+test_acc = (y_pred == y_test).mean()
+log.info(f"Test Accuracy: {test_acc:.4f}")
+
+log.info("\nClassification Report:")
+print(classification_report(y_test, y_pred))
+
+# ── Step 12: Save model ───────────────────────────────────────
+joblib.dump(pipeline, os.path.join(MDL_DIR, 'fir_model.pkl'))
+log.info(f"Model saved → {MDL_DIR}/fir_model.pkl")
+
+# ── Step 13: Test with real sentences ─────────────────────────
+test_cases = [
+    "Thieves broke into the house and stole gold jewelry and cash",
+    "Unknown person snatched mobile phone near bus stop",
+    "Accused cheated victim of 2 lakhs through fake UPI payment",
+    "Victim was assaulted and grievously hurt by accused",
+    "Woman harassed and stalked by neighbour repeatedly",
+    "Car accident on Hosur Road, driver fled the scene",
+]
+
+log.info("\n── Live Predictions ──────────────────────────")
+for text in test_cases:
+    pred = pipeline.predict([text])[0]
+    # LinearSVC uses decision scores instead of probabilities
+    scores = pipeline.decision_function([text])[0]
+    conf = (np.exp(scores) / np.exp(scores).sum()).max() * 100
+    log.info(f"Input:  {text[:55]}...")
+    log.info(f"Result: {pred.upper()} ({conf:.1f}% confidence)\n")
+
