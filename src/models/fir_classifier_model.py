@@ -30,103 +30,85 @@ log.info(f"Raw shape: {df.shape}")
 # ── Step 2: Text Processing (IPC Decoding) ─────────────────────
 # ActSection has IPC details. We map IPC codes to their descriptions.
 
+# Expanded English keyword descriptions per IPC section
 IPC_DESCRIPTIONS = {
     # THEFT
-    '379': 'theft stolen property goods',
-    '380': 'theft dwelling house building',
-    '381': 'theft by clerk servant employee',
-    '382': 'theft preparation hurt',
-    '356': 'snatching assault theft person',
-    '457': 'lurking house trespass theft night',
-    '454': 'house breaking theft',
+    '379': 'theft stolen property goods snatched took away stole burglar',
+    '380': 'theft dwelling house building broke entered stole burglary',
+    '381': 'theft clerk servant employee stole office workplace',
+    '382': 'theft preparation hurt weapon robbery',
+    '356': 'snatching assault theft chain mobile gold snatched person',
+    '457': 'lurking trespass theft night broke house entered stole',
+    '454': 'house breaking theft entered stole jewelry cash gold',
 
-    # ASSAULT / VIOLENCE
-    '302': 'murder culpable homicide death killed',
-    '304': 'culpable homicide death negligence',
-    '307': 'attempt to murder assault weapon',
-    '323': 'voluntarily causing hurt assault beating',
-    '324': 'hurt dangerous weapon knife assault',
-    '325': 'grievous hurt injury serious',
-    '326': 'grievous hurt acid dangerous weapon',
-    '351': 'assault criminal force threat',
-    '147': 'riot unlawful assembly violence',
-    '148': 'riot armed deadly weapon',
-    '149': 'unlawful assembly common object',
-    '363': 'kidnapping abduction minor',
-    '364': 'kidnapping murder ransom',
-    '365': 'kidnapping wrongful confinement',
-    '366': 'kidnapping woman compel marriage',
+    # ASSAULT
+    '302': 'murder killed death culpable homicide stabbed shot dead body',
+    '304': 'culpable homicide death negligence died killed',
+    '307': 'attempt murder assault weapon knife stabbed attacked',
+    '323': 'voluntarily hurt assault beat struck punch slap injured',
+    '324': 'hurt dangerous weapon knife rod assault bleeding injured',
+    '325': 'grievous hurt serious injury fracture hospitalized',
+    '326': 'grievous hurt acid dangerous weapon attack burn disfigure',
+    '351': 'assault criminal force threat intimidate pushed attacked',
+    '147': 'riot unlawful assembly violence mob attack group',
+    '148': 'riot armed weapon mob group attack violence',
+    '363': 'kidnapping abduction minor child taken missing',
+    '364': 'kidnapping murder ransom held captive',
+    '365': 'kidnapping wrongful confinement locked held captive',
 
-    # FRAUD / CHEATING
-    '420': 'cheating fraud deception dishonestly',
-    '406': 'criminal breach trust misappropriation',
-    '408': 'criminal breach trust employee',
-    '409': 'criminal breach trust public servant',
-    '415': 'cheating deception property',
-    '417': 'punishment cheating fraud',
-    '418': 'cheating knowledge wrongful loss',
-    '419': 'cheating impersonation fraud',
-    '463': 'forgery false document fraud',
-    '464': 'making false document forgery',
-    '465': 'punishment forgery',
-    '468': 'forgery cheating fraud purpose',
-    '471': 'using forged document genuine',
-    '384': 'extortion threat fear injury',
-    '385': 'extortion fear death grievous hurt',
-    '386': 'extortion death grievous hurt',
+    # FRAUD
+    '420': 'cheating fraud deception dishonestly money cash deceived tricked',
+    '406': 'criminal breach trust misappropriation betrayed stole entrusted',
+    '415': 'cheating deception property money transferred fake',
+    '417': 'cheating fraud punishment deceived money property',
+    '419': 'cheating impersonation fake identity fraud pretended',
+    '463': 'forgery false document fake certificate fraud signature',
+    '465': 'punishment forgery fake document created',
+    '468': 'forgery cheating fraud purpose document fake',
+    '471': 'using forged document genuine fake presented',
+    '384': 'extortion threat fear injury demanded money blackmail',
+    '386': 'extortion death grievous hurt threat demanded money',
 
     # WOMEN SAFETY
-    '376': 'rape sexual assault woman victim',
-    '354': 'assault criminal force woman modesty',
-    '354A': 'sexual harassment unwelcome physical contact',
-    '354B': 'assault woman disrobe force',
-    '354C': 'voyeurism watching woman private act',
-    '354D': 'stalking woman follow monitor',
-    '498': 'husband relative cruelty woman',
-    '498A': 'cruelty husband family dowry harassment',
-    '304B': 'dowry death woman husband family',
-    '306': 'abetment suicide woman harassment',
-    '509': 'word gesture insult modesty woman',
+    '376': 'rape sexual assault woman victim forced intercourse',
+    '354': 'assault woman modesty outrage touched groped molestation',
+    '354A': 'sexual harassment unwelcome physical contact demand favour',
+    '354B': 'assault woman disrobe force removed clothes',
+    '354C': 'voyeurism watching woman private act recorded',
+    '354D': 'stalking woman follow monitor obsessively watching',
+    '498': 'husband relative cruelty woman domestic violence',
+    '498A': 'cruelty husband family dowry harassment tortured wife',
+    '304B': 'dowry death woman husband family killed burned',
+    '306': 'abetment suicide woman harassment drove suicide',
+    '509': 'word gesture insult modesty woman eve teasing comment',
+    '366': 'kidnapping woman compel marriage abducted forced',
 
     # ACCIDENT
-    '279': 'rash driving road accident vehicle',
-    '304A': 'death negligence accident careless',
-    '337': 'hurt rash negligence driving',
-    '338': 'grievous hurt rash negligence vehicle',
-    '427': 'mischief damage fifty rupees',
+    '279': 'rash driving road accident vehicle hit run over speed',
+    '304A': 'death negligence accident careless died killed vehicle',
+    '337': 'hurt rash negligence driving road accident injured',
+    '338': 'grievous hurt rash negligence vehicle road accident serious',
 
     # PROPERTY CRIME
-    '436': 'mischief fire house destroy',
-    '447': 'criminal trespass property',
-    '448': 'house trespass breaking entering',
-    '449': 'house trespass hurt death',
-    '425': 'mischief wrongful loss damage property',
-    '426': 'mischief punishment property damage',
-    '430': 'mischief irrigation works',
-    '435': 'mischief fire property damage',
+    '436': 'mischief fire house destroy burned arson set fire',
+    '447': 'criminal trespass property entered without permission',
+    '448': 'house trespass breaking entering unauthorised',
+    '425': 'mischief wrongful loss damage property destroyed',
+    '426': 'mischief punishment property damage vandalised',
+    '435': 'mischief fire property damage arson burned',
 }
 
 def decode_act_section(act_text):
-    """Extract IPC sections and replace with descriptions"""
     import re
     if pd.isna(act_text):
         return ''
-    
     act_str = str(act_text)
     decoded_parts = []
-    
-    # Extract all section numbers from text like "IPC 1860 U/s: 379,380"
     sections = re.findall(r'\b(\d{2,3}[A-Z]?)\b', act_str)
-    
     for sec in sections:
         if sec in IPC_DESCRIPTIONS:
             decoded_parts.append(IPC_DESCRIPTIONS[sec])
-        else:
-            decoded_parts.append(sec)  # keep original if not in map
-    
-    # Also keep original act text for context
     decoded_parts.append(act_str.lower())
-    
     return ' '.join(decoded_parts)
 
 log.info("Decoding IPC sections to descriptions...")
@@ -223,6 +205,73 @@ df_balanced = pd.concat(balanced).sample(frac=1, random_state=42).reset_index(dr
 log.info(f"Balanced shape: {df_balanced.shape}")
 log.info("\nBalanced distribution:")
 print(df_balanced['crime_type'].value_counts())
+
+# ── Augment with plain English sentences ──────────────────────
+# This bridges the gap between legal text and real descriptions
+log.info("Augmenting with plain English sentences...")
+
+english_samples = [
+    # THEFT
+    ("thieves broke into house stole gold jewelry cash valuables", "theft"),
+    ("unknown person snatched mobile phone gold chain near bus stop", "theft"),
+    ("burglar entered through back door stole laptop cash jewelry", "theft"),
+    ("vehicle was stolen from parking lot during night", "theft"),
+    ("pickpocket stole wallet purse in crowded market bus", "theft"),
+    ("robbers looted shop at gunpoint took cash ornaments", "theft"),
+    ("cycle motorcycle stolen from outside house compound", "theft"),
+
+    # ASSAULT
+    ("victim was assaulted beaten grievously hurt by accused", "assault"),
+    ("accused attacked victim with knife rod causing serious injury", "assault"),
+    ("mob attacked victim with sticks rods caused bleeding injuries", "assault"),
+    ("accused attempted to murder victim stabbed multiple times", "assault"),
+    ("victim was kidnapped and held captive demanding ransom", "assault"),
+    ("accused punched slapped kicked victim in public", "assault"),
+    ("fight broke out group attacked victim with weapons", "assault"),
+
+    # FRAUD
+    ("accused cheated victim of two lakhs through fake UPI payment", "fraud"),
+    ("online fraud victim transferred money to fake account", "fraud"),
+    ("accused impersonated bank officer cheated victim of savings", "fraud"),
+    ("fake investment scheme defrauded multiple victims of crores", "fraud"),
+    ("accused forged documents signature to obtain loan fraudulently", "fraud"),
+    ("job fraud accused collected money promising employment abroad", "fraud"),
+    ("phishing link sent victim lost money from bank account", "fraud"),
+
+    # WOMEN SAFETY
+    ("woman harassed stalked by neighbour repeatedly following her", "women_safety"),
+    ("accused outraged modesty of woman touched inappropriately", "women_safety"),
+    ("victim of domestic violence beaten by husband daily", "women_safety"),
+    ("woman subjected to dowry harassment cruelty by in-laws", "women_safety"),
+    ("accused made obscene gestures comments towards woman", "women_safety"),
+    ("woman raped by known person on false promise of marriage", "women_safety"),
+    ("girl child sexually assaulted by neighbour relative", "women_safety"),
+
+    # ACCIDENT
+    ("car accident on hosur road driver fled the scene hit and run", "accident"),
+    ("rash driving caused accident pedestrian injured on road", "accident"),
+    ("drunk driver ran red light hit motorcycle rider injured", "accident"),
+    ("lorry truck overturned on highway multiple injured", "accident"),
+    ("speeding vehicle hit pedestrian on zebra crossing", "accident"),
+    ("auto rickshaw collision caused grievous injuries to passengers", "accident"),
+
+    # PROPERTY CRIME
+    ("accused set fire to house property out of revenge arson", "property_crime"),
+    ("neighbour trespassed property damaged boundary wall", "property_crime"),
+    ("accused damaged vehicle windshield out of personal enmity", "property_crime"),
+    ("group vandalised shop broke windows damaged property", "property_crime"),
+]
+
+# Create dataframe from English samples — repeat to give weight
+english_df = pd.DataFrame(english_samples * 500,  # 500x repetition
+    columns=['text', 'crime_type'])
+
+log.info(f"Added {len(english_df)} English augmentation samples")
+
+# Merge with existing balanced data
+df_balanced = pd.concat([df_balanced, english_df], ignore_index=True)
+df_balanced = df_balanced.sample(frac=1, random_state=42).reset_index(drop=True)
+log.info(f"Final training shape: {df_balanced.shape}")
 
 # ── Step 7: Train/test split ──────────────────────────────────
 X = df_balanced['text']
