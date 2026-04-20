@@ -1,0 +1,17 @@
+export const BANGALORE_LOCATIONS = {
+    "Koramangala": { lat: 12.9352, lng: 77.6245 },
+    "Indiranagar": { lat: 12.9784, lng: 77.6408 },
+    "Whitefield": { lat: 12.9698, lng: 77.7500 },
+    "HSR Layout": { lat: 12.9116, lng: 77.6389 },
+    "Jayanagar": { lat: 12.9250, lng: 77.5938 },
+    "MG Road": { lat: 12.9758, lng: 77.6076 },
+    "Electronic City": { lat: 12.8399, lng: 77.6770 },
+    "Marathahalli": { lat: 12.9592, lng: 77.7009 },
+    "Hebbal": { lat: 13.0354, lng: 77.5970 },
+    "Yeshwanthpur": { lat: 13.0232, lng: 77.5481 },
+    "BTM Layout": { lat: 12.9165, lng: 77.6101 },
+    "Rajajinagar": { lat: 12.9944, lng: 77.5556 },
+    "Banashankari": { lat: 12.9255, lng: 77.5468 },
+    "JP Nagar": { lat: 12.9102, lng: 77.5936 },
+    "Majestic": { lat: 12.9767, lng: 77.5713 },
+}
