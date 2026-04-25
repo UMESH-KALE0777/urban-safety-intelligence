@@ -1,3 +1,4 @@
+import "leaflet/dist/leaflet.css"
 import { useEffect, useRef, useState } from "react"
 import L from "leaflet"
 import HotspotLayer from "./HotspotLayer"
@@ -62,12 +63,12 @@ export default function MapView({ routes, hotspots, start, end }) {
         map.fitBounds(L.latLngBounds(allPts).pad(0.15))
     }, [routes, start, end])
 
-    return (
-        <div style={{ flex: 1, position: "relative" }}>
-            <div ref={mapRef} style={{ width: "100%", height: "100%" }} />
-            <HotspotLayer map={mapObj.current} hotspots={hotspots} />
-            <RoutePanel routes={routes} selectedIdx={selectedIdx} onSelect={setSelectedIdx} />
-            <SafetyLegend />
-        </div>
-    )
+  return (
+    <div style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0 }}>
+      <div ref={mapRef} style={{ width: "100%", height: "100%" }} />
+      <HotspotLayer map={mapObj.current} hotspots={hotspots} />
+      <RoutePanel routes={routes} selectedIdx={selectedIdx} onSelect={setSelectedIdx} />
+      <SafetyLegend />
+    </div>
+  )
 }
