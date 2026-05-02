@@ -4,12 +4,13 @@ import L from "leaflet"
 import HotspotLayer from "./HotspotLayer"
 import RoutePanel from "./RoutePanel"
 import SafetyLegend from "./SafetyLegend"
+import LoadingSpinner from "./LoadingSpinner"
 
-const ROUTE_COLORS = ["#1a73e8", "#fbbc04", "#9e9e9e"]
-const ROUTE_WEIGHTS = [5, 3, 2.5]
+const ROUTE_COLORS = ["#3b82f6", "#f59e0b", "#9e9e9e"]
+const ROUTE_WEIGHTS = [5, 3.5, 2.5]
 const ROUTE_DASH = [null, "8 5", "4 4"]
 
-export default function MapView({ routes, hotspots, start, end }) {
+export default function MapView({ routes, hotspots, start, end, loading, womenSafety }) {
     const mapRef = useRef(null)
     const mapObj = useRef(null)
     const routeRefs = useRef([])
@@ -40,35 +41,65 @@ export default function MapView({ routes, hotspots, start, end }) {
                 color: ROUTE_COLORS[i],
                 weight: ROUTE_WEIGHTS[i],
                 dashArray: ROUTE_DASH[i],
-                opacity: 0.85,
+                opacity: i === selectedIdx ? 1 : 0.5,
+                lineCap: "round",
+                lineJoin: "round",
             }).addTo(map)
+            line.bindTooltip(
+                `${r.name} · ${r.distance_km}km · Risk: ${r.risk_score}`,
+                { sticky: true }
+            )
             routeRefs.current.push(line)
         })
 
         if (start) {
-            const m = L.circleMarker([start.lat, start.lng], {
-                radius: 9, fillColor: "#1a73e8", color: "#fff", weight: 2, fillOpacity: 1,
-            }).addTo(map).bindTooltip("Start", { permanent: true, direction: "top" })
-            markerRefs.current.push(m)
+            const startIcon = L.divIcon({
+                html: `<div style="width:14px;height:14px;border-radius:50%;
+          background:#3b82f6;border:3px solid white;
+          box-shadow:0 2px 6px rgba(0,0,0,0.3)"></div>`,
+                iconSize: [14, 14], iconAnchor: [7, 7], className: "",
+            })
+            markerRefs.current.push(
+                L.marker([start.lat, start.lng], { icon: startIcon })
+                    .addTo(map).bindTooltip("Start", {
+                        permanent: true, direction: "top",
+                        className: ""
+                    })
+            )
         }
 
         if (end) {
-            const m = L.circleMarker([end.lat, end.lng], {
-                radius: 9, fillColor: "#e8453c", color: "#fff", weight: 2, fillOpacity: 1,
-            }).addTo(map).bindTooltip("End", { permanent: true, direction: "top" })
-            markerRefs.current.push(m)
+            const endIcon = L.divIcon({
+                html: `<div style="width:14px;height:14px;border-radius:50%;
+          background:#ef4444;border:3px solid white;
+          box-shadow:0 2px 6px rgba(0,0,0,0.3)"></div>`,
+                iconSize: [14, 14], iconAnchor: [7, 7], className: "",
+            })
+            markerRefs.current.push(
+                L.marker([end.lat, end.lng], { icon: endIcon })
+                    .addTo(map).bindTooltip("End", {
+                        permanent: true, direction: "top",
+                        className: ""
+                    })
+            )
         }
 
         const allPts = routes.flatMap(r => r.waypoints.map(wp => [wp.lat, wp.lng]))
-        map.fitBounds(L.latLngBounds(allPts).pad(0.15))
+        map.fitBounds(L.latLngBounds(allPts).pad(0.18))
     }, [routes, start, end])
 
-  return (
-    <div style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0 }}>
-      <div ref={mapRef} style={{ width: "100%", height: "100%" }} />
-      <HotspotLayer map={mapObj.current} hotspots={hotspots} />
-      <RoutePanel routes={routes} selectedIdx={selectedIdx} onSelect={setSelectedIdx} />
-      <SafetyLegend />
-    </div>
-  )
+    return (
+        <div style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0 }}>
+            <div ref={mapRef} style={{ width: "100%", height: "100%" }} />
+            {loading && <LoadingSpinner message="Finding safest route..." />}
+            <HotspotLayer map={mapObj.current} hotspots={hotspots} />
+            <RoutePanel
+                routes={routes}
+                selectedIdx={selectedIdx}
+                onSelect={setSelectedIdx}
+                womenSafety={womenSafety}
+            />
+            <SafetyLegend />
+        </div>
+    )
 }
