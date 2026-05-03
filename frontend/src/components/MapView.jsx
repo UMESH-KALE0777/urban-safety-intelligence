@@ -18,11 +18,16 @@ export default function MapView({ routes, hotspots, start, end, loading, womenSa
     const [selectedIdx, setSelectedIdx] = useState(0)
 
     useEffect(() => {
-        mapObj.current = L.map(mapRef.current, { zoomControl: true })
-            .setView([12.9716, 77.5946], 12)
-        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-            attribution: "© OpenStreetMap contributors", maxZoom: 18,
+        mapObj.current = L.map(mapRef.current, { zoomControl: false })
+            .setView([12.9716, 77.5946], 13)
+
+        L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
+            attribution: "© OpenStreetMap © CARTO",
+            maxZoom: 19,
         }).addTo(mapObj.current)
+
+        L.control.zoom({ position: "bottomright" }).addTo(mapObj.current)
+
         return () => mapObj.current.remove()
     }, [])
 
@@ -41,7 +46,7 @@ export default function MapView({ routes, hotspots, start, end, loading, womenSa
                 color: ROUTE_COLORS[i],
                 weight: ROUTE_WEIGHTS[i],
                 dashArray: ROUTE_DASH[i],
-                opacity: i === selectedIdx ? 1 : 0.5,
+                opacity: i === 0 ? 1 : 0.55,
                 lineCap: "round",
                 lineJoin: "round",
             }).addTo(map)
@@ -54,33 +59,29 @@ export default function MapView({ routes, hotspots, start, end, loading, womenSa
 
         if (start) {
             const startIcon = L.divIcon({
-                html: `<div style="width:14px;height:14px;border-radius:50%;
+                html: `<div style="width:16px;height:16px;border-radius:50%;
           background:#3b82f6;border:3px solid white;
-          box-shadow:0 2px 6px rgba(0,0,0,0.3)"></div>`,
-                iconSize: [14, 14], iconAnchor: [7, 7], className: "",
+          box-shadow:0 2px 8px rgba(59,130,246,0.5)"></div>`,
+                iconSize: [16, 16], iconAnchor: [8, 8], className: "",
             })
             markerRefs.current.push(
                 L.marker([start.lat, start.lng], { icon: startIcon })
-                    .addTo(map).bindTooltip("Start", {
-                        permanent: true, direction: "top",
-                        className: ""
-                    })
+                    .addTo(map)
+                    .bindTooltip("📍 Start", { permanent: true, direction: "top" })
             )
         }
 
         if (end) {
             const endIcon = L.divIcon({
-                html: `<div style="width:14px;height:14px;border-radius:50%;
+                html: `<div style="width:16px;height:16px;border-radius:50%;
           background:#ef4444;border:3px solid white;
-          box-shadow:0 2px 6px rgba(0,0,0,0.3)"></div>`,
-                iconSize: [14, 14], iconAnchor: [7, 7], className: "",
+          box-shadow:0 2px 8px rgba(239,68,68,0.5)"></div>`,
+                iconSize: [16, 16], iconAnchor: [8, 8], className: "",
             })
             markerRefs.current.push(
                 L.marker([end.lat, end.lng], { icon: endIcon })
-                    .addTo(map).bindTooltip("End", {
-                        permanent: true, direction: "top",
-                        className: ""
-                    })
+                    .addTo(map)
+                    .bindTooltip("🏁 End", { permanent: true, direction: "top" })
             )
         }
 
@@ -91,7 +92,7 @@ export default function MapView({ routes, hotspots, start, end, loading, womenSa
     return (
         <div style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0 }}>
             <div ref={mapRef} style={{ width: "100%", height: "100%" }} />
-            {loading && <LoadingSpinner message="Finding safest route..." />}
+            {loading && <LoadingSpinner message="Analyzing safe routes..." />}
             <HotspotLayer map={mapObj.current} hotspots={hotspots} />
             <RoutePanel
                 routes={routes}
@@ -100,6 +101,26 @@ export default function MapView({ routes, hotspots, start, end, loading, womenSa
                 womenSafety={womenSafety}
             />
             <SafetyLegend />
+
+            {/* Empty state */}
+            {!routes.length && !loading && (
+                <div style={{
+                    position: "absolute", top: "50%", left: "50%",
+                    transform: "translate(-50%, -50%)", zIndex: 1000,
+                    background: "rgba(255,255,255,0.95)", borderRadius: 16,
+                    padding: "24px 32px", textAlign: "center",
+                    boxShadow: "0 4px 24px rgba(0,0,0,0.10)",
+                    border: "1px solid #e2e8f0", backdropFilter: "blur(8px)"
+                }}>
+                    <div style={{ fontSize: 36, marginBottom: 10 }}>🛡️</div>
+                    <p style={{ fontSize: 14, fontWeight: 700, color: "#0f172a", marginBottom: 4 }}>
+                        Urban Safety Intelligence
+                    </p>
+                    <p style={{ fontSize: 12, color: "#64748b", maxWidth: 220 }}>
+                        Select your start and destination above to find the safest route through Bangalore
+                    </p>
+                </div>
+            )}
         </div>
     )
 }
