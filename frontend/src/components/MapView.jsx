@@ -86,7 +86,7 @@ export default function MapView({ routes, hotspots, start, end, loading, womenSa
         }
 
         const allPts = routes.flatMap(r => r.waypoints.map(wp => [wp.lat, wp.lng]))
-        map.fitBounds(L.latLngBounds(allPts).pad(0.18))
+        map.fitBounds(L.latLngBounds(allPts).pad(0.25), { maxZoom: 13 })
     }, [routes, start, end])
 
     return (
