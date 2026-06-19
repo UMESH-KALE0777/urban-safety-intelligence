@@ -1,4 +1,4 @@
-from app.utils.geo import haversine, midpoint
+from app.ml.ors_client import get_alternative_routes
 from app.ml.scorer import calculate_risk, to_safety_pct
 from app.ml.clustering import get_hotspots
 from app.utils.logger import get_logger
@@ -7,28 +7,21 @@ logger = get_logger(__name__)
 
 def generate_routes(start: tuple, end: tuple, time_of_day: str = "day") -> list:
     hotspots = get_hotspots()
-    dist = haversine(start, end)
 
-    candidates = [
-        {
-            "name": "Route A",
-            "waypoints": [start, midpoint(start, end,  0.012, -0.010), end],
-            "distance_km": round(dist * 1.15, 1),
-            "duration_min": round(dist * 5.0),
-        },
-        {
-            "name": "Route B",
-            "waypoints": [start, midpoint(start, end, -0.010,  0.012), end],
-            "distance_km": round(dist * 1.05, 1),
-            "duration_min": round(dist * 3.8),
-        },
-        {
-            "name": "Route C",
-            "waypoints": [start, midpoint(start, end,  0.018,  0.015), end],
-            "distance_km": round(dist * 1.25, 1),
-            "duration_min": round(dist * 5.8),
-        },
-    ]
+    raw_routes = get_alternative_routes(start, end, count=3)
+
+    if not raw_routes:
+        logger.error("No routes returned from ORS — check API key or coordinates")
+        return []
+
+    candidates = []
+    for i, r in enumerate(raw_routes):
+        candidates.append({
+            "name": f"Route {chr(65+i)}",  # Route A, B, C
+            "waypoints": r["waypoints"],
+            "distance_km": r["distance_km"],
+            "duration_min": r["duration_min"],
+        })
 
     for r in candidates:
         r["risk_score"] = calculate_risk(r["waypoints"], hotspots, time_of_day)
@@ -38,8 +31,8 @@ def generate_routes(start: tuple, end: tuple, time_of_day: str = "day") -> list:
 
     labels = ["safest", "fastest", "alternate"]
     for i, r in enumerate(candidates):
-        r["label"] = labels[i]
+        r["label"] = labels[i] if i < len(labels) else "alternate"
         r["waypoints"] = [{"lat": wp[0], "lng": wp[1]} for wp in r["waypoints"]]
 
-    logger.info(f"Generated {len(candidates)} routes | time={time_of_day}")
+    logger.info(f"Generated {len(candidates)} real routes | time={time_of_day}")
     return candidates
