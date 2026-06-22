@@ -8,7 +8,7 @@ TIME_WEIGHTS = {"day": 1.0, "evening": 1.4, "night": 1.9}
 def calculate_risk(waypoints: list, hotspots: list, time_of_day: str = "day") -> float:
     tw = TIME_WEIGHTS.get(time_of_day, 1.0)
 
-    # Sample every Nth point for long routes (real roads have many points)
+    
     sample_rate = max(1, len(waypoints) // 40)
     sampled = waypoints[::sample_rate]
 
