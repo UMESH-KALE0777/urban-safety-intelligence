@@ -7,8 +7,13 @@ TIME_WEIGHTS = {"day": 1.0, "evening": 1.4, "night": 1.9}
 
 def calculate_risk(waypoints: list, hotspots: list, time_of_day: str = "day") -> float:
     tw = TIME_WEIGHTS.get(time_of_day, 1.0)
+
+    # Sample every Nth point for long routes (real roads have many points)
+    sample_rate = max(1, len(waypoints) // 40)
+    sampled = waypoints[::sample_rate]
+
     score = 0.0
-    for wp in waypoints:
+    for wp in sampled:
         for h in hotspots:
             dist = haversine(wp, (h["lat"], h["lng"]))
             radius_km = h["radius"] / 1000
@@ -16,6 +21,7 @@ def calculate_risk(waypoints: list, hotspots: list, time_of_day: str = "day") ->
                 weight = {"high": 4.0, "medium": 2.0, "low": 0.8}.get(h["risk"], 1.0)
                 proximity = max(0, 1 - dist / (radius_km * 1.5))
                 score += weight * proximity
+
     return round(score * tw, 2)
 
 def to_safety_pct(score: float) -> int:
