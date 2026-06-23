@@ -30,4 +30,4 @@ app.include_router(route_router,    prefix="/api/routes",    tags=["Routes"])
 @app.on_event("startup")
 async def startup():
     logger.info("Urban Safety Intelligence API starting...")
-    logger.info(f"Environment: {settings.app_env}")
+    logger.info(f"Environment: {settings.app_env}") 
