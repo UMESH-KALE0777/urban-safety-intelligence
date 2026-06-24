@@ -25,4 +25,4 @@ def calculate_risk(waypoints: list, hotspots: list, time_of_day: str = "day") ->
     return round(score * tw, 2)
 
 def to_safety_pct(score: float) -> int:
-    return max(5, min(100, round(100 - score * 10)))
+    return max(5, min(100, round(100 - score * 0.8)))
