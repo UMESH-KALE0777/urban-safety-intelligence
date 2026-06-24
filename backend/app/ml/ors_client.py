@@ -5,21 +5,17 @@ from app.utils.logger import get_logger
 logger = get_logger(__name__)
 settings = get_settings()
 
-ORS_BASE_URL = "https://api.openrouteservice.org/v2/directions/driving-car"
-
+ORS_BASE_URL = "https://api.heigit.org/openrouteservice/v2/directions/driving-car/geojson"
 def get_real_route(start: tuple, end: tuple) -> dict:
-    """
-    Fetch a real road-following route from OpenRouteService.
-    start, end = (lat, lng)
-    Returns: { waypoints: [(lat,lng),...], distance_km, duration_min }
-    """
     headers = {
         "Authorization": settings.openrouteservice_api_key,
         "Content-Type": "application/json",
     }
+    print(f"DEBUG KEY: [{settings.openrouteservice_api_key}]")
+
     body = {
         "coordinates": [
-            [start[1], start[0]],  # ORS wants [lng, lat]
+            [start[1], start[0]],
             [end[1], end[0]],
         ]
     }
@@ -30,7 +26,7 @@ def get_real_route(start: tuple, end: tuple) -> dict:
         data = res.json()
 
         coords = data["features"][0]["geometry"]["coordinates"]
-        waypoints = [(c[1], c[0]) for c in coords]  # back to (lat, lng)
+        waypoints = [(c[1], c[0]) for c in coords]
 
         summary = data["features"][0]["properties"]["summary"]
         distance_km = round(summary["distance"] / 1000, 2)
@@ -47,14 +43,12 @@ def get_real_route(start: tuple, end: tuple) -> dict:
 
 
 def get_alternative_routes(start: tuple, end: tuple, count: int = 3) -> list:
-    """
-    Fetch multiple route alternatives from OpenRouteService.
-    Falls back to single route if alternatives aren't available.
-    """
     headers = {
         "Authorization": settings.openrouteservice_api_key,
         "Content-Type": "application/json",
     }
+    print(f"DEBUG KEY: [{settings.openrouteservice_api_key}]")
+
     body = {
         "coordinates": [
             [start[1], start[0]],
