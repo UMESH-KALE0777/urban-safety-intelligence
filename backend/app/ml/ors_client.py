@@ -11,7 +11,6 @@ def get_real_route(start: tuple, end: tuple) -> dict:
         "Authorization": settings.openrouteservice_api_key,
         "Content-Type": "application/json",
     }
-    print(f"DEBUG KEY: [{settings.openrouteservice_api_key}]")
 
     body = {
         "coordinates": [
