@@ -46,7 +46,6 @@ def get_alternative_routes(start: tuple, end: tuple, count: int = 3) -> list:
         "Authorization": settings.openrouteservice_api_key,
         "Content-Type": "application/json",
     }
-    print(f"DEBUG KEY: [{settings.openrouteservice_api_key}]")
 
     body = {
         "coordinates": [
