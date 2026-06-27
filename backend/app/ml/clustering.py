@@ -9,10 +9,10 @@ logger = get_logger(__name__)
 
 HOTSPOTS_PATH = os.path.join("data", "hotspots", "hotspots.json")
 
-def _risk_label(count: int) -> str:
-    if count >= 12:
+def _risk_label(count: int, p33: float, p66: float) -> str:
+    if count > p66:
         return "high"
-    elif count >= 6:
+    elif count >= p33:
         return "medium"
     return "low"
 
@@ -26,19 +26,27 @@ def run_clustering() -> list:
     df = df.copy()
     df["cluster"] = labels
 
-    hotspots = []
+    cluster_counts = {}
     for cluster_id in set(labels):
         if cluster_id == -1:
             continue
         cluster_df = df[df["cluster"] == cluster_id]
-        count = len(cluster_df)
+        cluster_counts[cluster_id] = len(cluster_df)
+
+    counts_list = list(cluster_counts.values())
+    p33 = np.percentile(counts_list, 33) if counts_list else 0
+    p66 = np.percentile(counts_list, 66) if counts_list else 0
+
+    hotspots = []
+    for cluster_id, count in cluster_counts.items():
+        cluster_df = df[df["cluster"] == cluster_id]
         hotspots.append({
             "id":     int(cluster_id),
             "lat":    round(float(cluster_df["lat"].mean()), 6),
             "lng":    round(float(cluster_df["lng"].mean()), 6),
             "count":  count,
-            "risk":   _risk_label(count),
-            "radius": int(count * 100 + 350),
+            "risk":   _risk_label(count, p33, p66),
+            "radius": int(min(1500, max(250, 200 + (count ** 0.5) * 40))),
         })
 
     os.makedirs(os.path.dirname(HOTSPOTS_PATH), exist_ok=True)
