@@ -1,10 +1,74 @@
 [
   {
     "id": 0,
-    "lat": 12.9558,
-    "lng": 77.6258,
-    "count": 15,
+    "lat": 12.921227,
+    "lng": 77.615427,
+    "count": 258,
     "risk": "high",
-    "radius": 1850
+    "radius": 842
+  },
+  {
+    "id": 1,
+    "lat": 12.985169,
+    "lng": 77.600385,
+    "count": 76,
+    "risk": "high",
+    "radius": 548
+  },
+  {
+    "id": 2,
+    "lat": 12.970894,
+    "lng": 77.749603,
+    "count": 68,
+    "risk": "medium",
+    "radius": 529
+  },
+  {
+    "id": 3,
+    "lat": 12.978843,
+    "lng": 77.641161,
+    "count": 50,
+    "risk": "low",
+    "radius": 482
+  },
+  {
+    "id": 4,
+    "lat": 12.997709,
+    "lng": 77.558964,
+    "count": 224,
+    "risk": "high",
+    "radius": 798
+  },
+  {
+    "id": 5,
+    "lat": 12.84102,
+    "lng": 77.676476,
+    "count": 55,
+    "risk": "low",
+    "radius": 496
+  },
+  {
+    "id": 6,
+    "lat": 13.035308,
+    "lng": 77.598005,
+    "count": 56,
+    "risk": "medium",
+    "radius": 499
+  },
+  {
+    "id": 7,
+    "lat": 12.95914,
+    "lng": 77.700747,
+    "count": 71,
+    "risk": "medium",
+    "radius": 537
+  },
+  {
+    "id": 8,
+    "lat": 12.924917,
+    "lng": 77.546059,
+    "count": 52,
+    "risk": "low",
+    "radius": 488
   }
 ]

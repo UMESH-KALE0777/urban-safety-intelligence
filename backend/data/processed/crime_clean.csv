@@ -1,0 +1,911 @@
+lat,lng,zone,crime_type,severity,hour,day_of_week,month,year
+12.937095,77.629974,Koramangala,chain_snatch,3,8,1,3,2024
+12.941517,77.62757,Koramangala,theft,2,21,5,5,2023
+12.94105,77.630655,Koramangala,chain_snatch,3,22,4,12,2022
+12.933488,77.62153,Koramangala,theft,2,17,6,3,2024
+12.936868,77.62783,Koramangala,vehicle_theft,2,14,0,7,2023
+12.932799,77.62829,Koramangala,vehicle_theft,2,23,4,2,2024
+12.933727,77.626002,Koramangala,burglary,3,17,0,4,2023
+12.946313,77.629275,Koramangala,burglary,3,11,5,2,2023
+12.935891,77.625797,Koramangala,robbery,4,12,6,8,2023
+12.931164,77.618167,Koramangala,theft,2,2,1,5,2023
+12.931388,77.620309,Koramangala,vehicle_theft,2,17,4,1,2022
+12.937528,77.628051,Koramangala,vehicle_theft,2,19,2,3,2022
+12.937849,77.625464,Koramangala,burglary,3,22,0,8,2023
+12.940049,77.629434,Koramangala,theft,2,12,3,8,2023
+12.936647,77.62192,Koramangala,harassment,3,14,0,5,2023
+12.934598,77.620638,Koramangala,theft,2,10,2,7,2022
+12.934321,77.625928,Koramangala,robbery,4,15,4,11,2022
+12.931966,77.622493,Koramangala,theft,2,4,1,10,2022
+12.92927,77.623585,Koramangala,theft,2,6,3,11,2023
+12.934167,77.626344,Koramangala,theft,2,12,2,9,2022
+12.924579,77.625882,Koramangala,harassment,3,0,4,1,2024
+12.933268,77.622221,Koramangala,theft,2,9,0,4,2022
+12.938471,77.620282,Koramangala,theft,2,9,2,1,2022
+12.935441,77.634353,Koramangala,theft,2,2,5,7,2022
+12.936552,77.632398,Koramangala,robbery,4,17,1,6,2024
+12.938364,77.620862,Koramangala,burglary,3,19,4,4,2023
+12.931238,77.622235,Koramangala,burglary,3,15,4,3,2024
+12.933055,77.628886,Koramangala,theft,2,19,6,4,2022
+12.932067,77.623212,Koramangala,burglary,3,12,6,10,2024
+12.935252,77.626011,Koramangala,theft,2,8,0,2,2022
+12.93624,77.627627,Koramangala,theft,2,21,0,9,2024
+12.934058,77.628761,Koramangala,burglary,3,20,0,8,2024
+12.938616,77.631654,Koramangala,harassment,3,20,5,9,2024
+12.934628,77.616762,Koramangala,vehicle_theft,2,10,2,9,2022
+12.93335,77.62005,Koramangala,theft,2,14,6,3,2022
+12.944293,77.625088,Koramangala,robbery,4,16,5,6,2023
+12.940038,77.626652,Koramangala,robbery,4,21,5,1,2024
+12.931348,77.628409,Koramangala,assault,4,8,2,1,2022
+12.937628,77.623104,Koramangala,vehicle_theft,2,14,3,9,2022
+12.93339,77.627608,Koramangala,harassment,3,13,4,7,2022
+12.93804,77.62487,Koramangala,robbery,4,8,1,3,2023
+12.93943,77.624705,Koramangala,theft,2,17,0,8,2022
+12.927992,77.626371,Koramangala,theft,2,18,1,3,2023
+12.93726,77.639911,Koramangala,harassment,3,21,4,4,2022
+12.935473,77.622862,Koramangala,theft,2,12,6,6,2024
+12.937945,77.618049,Koramangala,assault,4,16,5,1,2023
+12.935457,77.620189,Koramangala,chain_snatch,3,12,4,12,2022
+12.933702,77.619335,Koramangala,assault,4,20,2,7,2022
+12.934771,77.622555,Koramangala,vehicle_theft,2,19,2,12,2023
+12.932113,77.631145,Koramangala,theft,2,1,1,10,2022
+12.935935,77.626812,Koramangala,robbery,4,9,4,7,2024
+12.935546,77.622128,Koramangala,robbery,4,19,2,5,2023
+12.936975,77.627599,Koramangala,theft,2,6,3,10,2023
+12.93419,77.619509,Koramangala,assault,4,14,6,10,2023
+12.935207,77.627524,Koramangala,vehicle_theft,2,21,4,4,2024
+12.93989,77.626626,Koramangala,vehicle_theft,2,21,3,2,2024
+12.937947,77.624784,Koramangala,burglary,3,14,2,1,2022
+12.931668,77.621702,Koramangala,burglary,3,9,5,2,2022
+12.934368,77.622528,Koramangala,theft,2,18,1,10,2023
+12.943005,77.62434,Koramangala,robbery,4,10,1,11,2022
+12.935403,77.626478,Koramangala,theft,2,13,4,9,2024
+12.940311,77.622134,Koramangala,vehicle_theft,2,13,6,5,2022
+12.932693,77.619132,Koramangala,burglary,3,19,0,4,2022
+12.936497,77.623979,Koramangala,robbery,4,21,3,3,2023
+12.931176,77.619643,Koramangala,burglary,3,13,2,5,2022
+12.935151,77.620911,Koramangala,chain_snatch,3,20,6,10,2022
+12.938756,77.626484,Koramangala,chain_snatch,3,16,0,6,2024
+12.938745,77.623565,Koramangala,robbery,4,9,1,5,2022
+12.929408,77.61887,Koramangala,theft,2,23,3,1,2024
+12.940506,77.620682,Koramangala,harassment,3,17,2,12,2023
+12.984924,77.59699,Shivajinagar,robbery,4,21,4,2,2023
+12.986291,77.597691,Shivajinagar,theft,2,6,0,3,2022
+12.981612,77.600819,Shivajinagar,theft,2,12,0,6,2022
+12.985279,77.604934,Shivajinagar,vehicle_theft,2,0,2,12,2022
+12.982193,77.597132,Shivajinagar,theft,2,18,0,5,2023
+12.993759,77.597767,Shivajinagar,assault,4,21,1,12,2023
+12.981807,77.595649,Shivajinagar,robbery,4,9,3,11,2023
+12.991911,77.59503,Shivajinagar,theft,2,10,4,3,2022
+12.988121,77.601604,Shivajinagar,vehicle_theft,2,13,1,8,2023
+12.984706,77.599871,Shivajinagar,harassment,3,2,0,2,2024
+12.986364,77.600654,Shivajinagar,theft,2,17,2,1,2022
+12.985875,77.599062,Shivajinagar,theft,2,2,4,5,2023
+12.988697,77.604251,Shivajinagar,harassment,3,16,2,1,2022
+12.985481,77.603058,Shivajinagar,assault,4,7,5,1,2022
+12.971087,77.599927,Shivajinagar,chain_snatch,3,2,2,11,2023
+12.989106,77.601664,Shivajinagar,harassment,3,16,0,1,2024
+12.990956,77.604511,Shivajinagar,theft,2,19,2,7,2023
+12.991442,77.606096,Shivajinagar,burglary,3,23,6,11,2024
+12.991009,77.601296,Shivajinagar,harassment,3,11,3,7,2023
+12.978186,77.600778,Shivajinagar,harassment,3,22,4,2,2023
+12.979782,77.603679,Shivajinagar,assault,4,11,2,9,2024
+12.986466,77.59724,Shivajinagar,theft,2,7,3,8,2022
+12.981057,77.603016,Shivajinagar,harassment,3,14,1,3,2024
+12.984057,77.600693,Shivajinagar,chain_snatch,3,11,5,1,2022
+12.98523,77.591869,Shivajinagar,assault,4,9,4,11,2022
+12.98549,77.608894,Shivajinagar,theft,2,14,2,1,2023
+12.985713,77.601143,Shivajinagar,harassment,3,5,6,8,2023
+12.992123,77.60201,Shivajinagar,theft,2,19,1,11,2024
+12.997316,77.605478,Shivajinagar,burglary,3,21,4,2,2023
+12.986175,77.599045,Shivajinagar,robbery,4,12,3,10,2024
+12.981907,77.599597,Shivajinagar,robbery,4,9,0,4,2022
+12.981504,77.600987,Shivajinagar,burglary,3,20,6,6,2023
+12.97697,77.60527,Shivajinagar,assault,4,16,4,6,2023
+12.976683,77.600914,Shivajinagar,burglary,3,9,0,1,2022
+12.982397,77.599051,Shivajinagar,theft,2,7,2,8,2024
+12.98819,77.601581,Shivajinagar,harassment,3,3,6,6,2023
+12.987113,77.60183,Shivajinagar,theft,2,8,6,11,2023
+12.982742,77.596992,Shivajinagar,theft,2,19,2,4,2022
+12.98895,77.604057,Shivajinagar,chain_snatch,3,15,5,5,2023
+12.982393,77.60119,Shivajinagar,theft,2,14,1,8,2023
+12.987506,77.59695,Shivajinagar,assault,4,16,3,1,2024
+12.982107,77.610735,Shivajinagar,burglary,3,19,6,3,2023
+12.982761,77.60702,Shivajinagar,theft,2,20,4,8,2024
+12.985346,77.600377,Shivajinagar,harassment,3,8,5,12,2022
+12.98305,77.59927,Shivajinagar,theft,2,20,4,5,2022
+12.983904,77.603432,Shivajinagar,theft,2,17,1,9,2023
+12.982294,77.592079,Shivajinagar,chain_snatch,3,13,5,1,2024
+12.980158,77.594546,Shivajinagar,robbery,4,16,1,5,2024
+12.989859,77.597477,Shivajinagar,assault,4,13,1,4,2024
+12.986918,77.607332,Shivajinagar,harassment,3,14,4,6,2022
+12.991039,77.602608,Shivajinagar,robbery,4,9,2,10,2022
+12.981882,77.592214,Shivajinagar,theft,2,15,3,8,2024
+12.988028,77.597311,Shivajinagar,chain_snatch,3,7,1,11,2024
+12.987872,77.60727,Shivajinagar,assault,4,16,3,11,2023
+12.981437,77.591701,Shivajinagar,harassment,3,16,5,11,2023
+12.984189,77.601188,Shivajinagar,assault,4,15,3,11,2022
+12.986001,77.596441,Shivajinagar,harassment,3,18,1,9,2023
+12.983683,77.599119,Shivajinagar,theft,2,6,1,4,2023
+12.980781,77.598082,Shivajinagar,chain_snatch,3,11,6,5,2024
+12.980952,77.594381,Shivajinagar,theft,2,11,0,10,2024
+12.988362,77.600846,Shivajinagar,harassment,3,14,2,11,2024
+12.974212,77.600783,Shivajinagar,theft,2,8,0,1,2022
+12.983924,77.596574,Shivajinagar,assault,4,17,3,8,2022
+12.979549,77.593355,Shivajinagar,theft,2,11,2,1,2022
+12.978397,77.603804,Shivajinagar,robbery,4,20,2,2,2023
+12.991367,77.600928,Shivajinagar,assault,4,14,3,1,2022
+12.987055,77.599823,Shivajinagar,theft,2,19,1,12,2022
+12.988743,77.606086,Shivajinagar,theft,2,7,0,9,2024
+12.995285,77.601596,Shivajinagar,theft,2,8,0,5,2024
+12.988448,77.603494,Shivajinagar,harassment,3,16,5,8,2023
+12.980676,77.603464,Shivajinagar,chain_snatch,3,12,6,7,2023
+12.986305,77.595996,Shivajinagar,theft,2,5,3,2,2023
+12.98902,77.59897,Shivajinagar,harassment,3,17,2,7,2024
+12.989987,77.59232,Shivajinagar,theft,2,17,1,5,2024
+12.988887,77.600876,Shivajinagar,vehicle_theft,2,19,0,2,2024
+12.981823,77.607483,Shivajinagar,assault,4,19,0,6,2023
+12.970989,77.752491,Whitefield,robbery,4,7,4,11,2023
+12.963282,77.752207,Whitefield,harassment,3,6,0,5,2022
+12.966205,77.746361,Whitefield,assault,4,19,2,8,2023
+12.962437,77.744882,Whitefield,burglary,3,18,1,2,2023
+12.964063,77.752324,Whitefield,chain_snatch,3,5,4,11,2024
+12.972096,77.742986,Whitefield,robbery,4,19,1,7,2024
+12.962781,77.749504,Whitefield,vehicle_theft,2,7,6,4,2024
+12.98004,77.749616,Whitefield,assault,4,3,1,9,2023
+12.965616,77.742878,Whitefield,assault,4,11,4,11,2023
+12.968569,77.747364,Whitefield,assault,4,4,2,11,2022
+12.964523,77.749095,Whitefield,theft,2,22,5,8,2024
+12.974945,77.754249,Whitefield,chain_snatch,3,20,5,8,2022
+12.968667,77.750488,Whitefield,harassment,3,18,1,10,2024
+12.96199,77.748882,Whitefield,vehicle_theft,2,16,6,5,2024
+12.974316,77.749678,Whitefield,theft,2,22,6,3,2023
+12.964704,77.755656,Whitefield,assault,4,17,3,12,2022
+12.974823,77.746422,Whitefield,theft,2,18,3,7,2024
+12.974721,77.753344,Whitefield,chain_snatch,3,15,0,10,2023
+12.968049,77.745255,Whitefield,robbery,4,14,2,11,2024
+12.980191,77.747399,Whitefield,theft,2,3,3,9,2023
+12.976751,77.750674,Whitefield,theft,2,11,0,3,2022
+12.965783,77.746929,Whitefield,robbery,4,10,0,1,2022
+12.976002,77.746007,Whitefield,vehicle_theft,2,13,3,11,2023
+12.970896,77.750201,Whitefield,chain_snatch,3,10,6,8,2024
+12.969412,77.750217,Whitefield,harassment,3,23,3,6,2022
+12.969287,77.747995,Whitefield,chain_snatch,3,6,0,1,2023
+12.975482,77.747717,Whitefield,chain_snatch,3,11,5,1,2024
+12.970612,77.743937,Whitefield,chain_snatch,3,9,0,4,2023
+12.963825,77.747136,Whitefield,harassment,3,14,4,9,2024
+12.971974,77.754334,Whitefield,vehicle_theft,2,21,4,11,2024
+12.969982,77.747476,Whitefield,theft,2,9,4,12,2022
+12.97343,77.750144,Whitefield,harassment,3,23,2,8,2023
+12.970429,77.756925,Whitefield,assault,4,21,3,1,2024
+12.97181,77.75343,Whitefield,harassment,3,18,1,4,2024
+12.973961,77.749621,Whitefield,burglary,3,8,1,10,2024
+12.966557,77.753449,Whitefield,theft,2,21,1,11,2022
+12.968915,77.750759,Whitefield,assault,4,6,2,7,2023
+12.965058,77.748404,Whitefield,robbery,4,20,4,6,2023
+12.972808,77.753908,Whitefield,vehicle_theft,2,8,5,1,2023
+12.971268,77.747897,Whitefield,burglary,3,2,6,11,2022
+12.972728,77.75432,Whitefield,robbery,4,14,1,2,2023
+12.974995,77.750431,Whitefield,assault,4,22,2,4,2023
+12.971523,77.750973,Whitefield,chain_snatch,3,9,4,11,2023
+12.965334,77.745315,Whitefield,chain_snatch,3,13,5,2,2022
+12.97181,77.756883,Whitefield,theft,2,21,3,11,2023
+12.969165,77.745253,Whitefield,theft,2,5,1,4,2024
+12.974797,77.751966,Whitefield,burglary,3,7,0,7,2022
+12.963853,77.751266,Whitefield,burglary,3,9,3,6,2023
+12.970986,77.749837,Whitefield,robbery,4,17,0,8,2022
+12.979689,77.748017,Whitefield,theft,2,12,2,9,2022
+12.973559,77.753384,Whitefield,vehicle_theft,2,21,0,1,2022
+12.96391,77.749641,Whitefield,assault,4,0,0,10,2023
+12.968811,77.747272,Whitefield,robbery,4,15,0,4,2023
+12.976991,77.752563,Whitefield,robbery,4,7,1,2,2023
+12.975397,77.753699,Whitefield,theft,2,6,5,9,2023
+12.971288,77.749312,Whitefield,burglary,3,17,1,12,2023
+12.978263,77.749179,Whitefield,chain_snatch,3,17,3,6,2023
+12.976543,77.748159,Whitefield,chain_snatch,3,14,3,7,2022
+12.968386,77.741893,Whitefield,assault,4,17,4,8,2022
+12.98166,77.749613,Whitefield,chain_snatch,3,18,1,3,2023
+12.966427,77.749946,Whitefield,robbery,4,16,2,3,2022
+12.96877,77.743326,Whitefield,theft,2,1,5,5,2024
+12.975338,77.75303,Whitefield,robbery,4,20,5,4,2023
+12.976536,77.748164,Whitefield,harassment,3,16,3,2,2024
+12.972409,77.743694,Whitefield,harassment,3,13,5,12,2024
+12.967298,77.751583,Whitefield,burglary,3,17,3,7,2023
+12.971095,77.748834,Whitefield,theft,2,23,4,9,2023
+12.975969,77.757218,Whitefield,theft,2,13,3,2,2024
+12.920688,77.608919,BTM Layout,burglary,3,11,4,1,2022
+12.915898,77.614082,BTM Layout,theft,2,9,1,10,2023
+12.918851,77.610561,BTM Layout,theft,2,13,0,6,2022
+12.922479,77.610811,BTM Layout,burglary,3,12,3,8,2024
+12.915192,77.607896,BTM Layout,harassment,3,9,1,9,2024
+12.911551,77.612617,BTM Layout,theft,2,3,4,5,2024
+12.920165,77.611486,BTM Layout,robbery,4,15,6,8,2024
+12.912238,77.610467,BTM Layout,assault,4,11,5,4,2023
+12.914005,77.617756,BTM Layout,theft,2,18,4,6,2024
+12.917102,77.61156,BTM Layout,burglary,3,20,1,2,2022
+12.914892,77.611216,BTM Layout,chain_snatch,3,21,0,4,2022
+12.918524,77.614061,BTM Layout,burglary,3,22,0,10,2023
+12.920521,77.60909,BTM Layout,burglary,3,23,0,5,2022
+12.921393,77.612877,BTM Layout,theft,2,6,3,6,2024
+12.91531,77.615603,BTM Layout,chain_snatch,3,19,2,1,2023
+12.912115,77.60434,BTM Layout,assault,4,0,6,5,2024
+12.913944,77.604808,BTM Layout,robbery,4,13,3,6,2023
+12.921577,77.612891,BTM Layout,assault,4,8,0,3,2022
+12.914683,77.61002,BTM Layout,harassment,3,15,1,9,2022
+12.925814,77.613001,BTM Layout,robbery,4,16,6,6,2023
+12.915489,77.611668,BTM Layout,burglary,3,22,2,3,2024
+12.914633,77.608391,BTM Layout,theft,2,14,3,5,2023
+12.908852,77.611687,BTM Layout,robbery,4,20,3,2,2023
+12.915963,77.609463,BTM Layout,theft,2,13,6,12,2023
+12.920296,77.607452,BTM Layout,chain_snatch,3,8,4,10,2023
+12.917001,77.608382,BTM Layout,chain_snatch,3,16,2,7,2023
+12.913692,77.607448,BTM Layout,chain_snatch,3,21,1,8,2023
+12.917767,77.616139,BTM Layout,robbery,4,21,2,5,2023
+12.920615,77.612379,BTM Layout,chain_snatch,3,21,2,4,2023
+12.918597,77.60716,BTM Layout,assault,4,16,1,1,2024
+12.912246,77.60714,BTM Layout,assault,4,8,6,11,2023
+12.919168,77.603902,BTM Layout,theft,2,17,1,3,2023
+12.918776,77.616614,BTM Layout,robbery,4,19,6,4,2022
+12.912097,77.607255,BTM Layout,harassment,3,8,0,7,2022
+12.914013,77.612905,BTM Layout,assault,4,4,4,8,2023
+12.915514,77.603948,BTM Layout,assault,4,18,5,6,2023
+12.92319,77.611776,BTM Layout,vehicle_theft,2,18,5,4,2023
+12.918655,77.606417,BTM Layout,assault,4,22,0,7,2023
+12.913558,77.615044,BTM Layout,theft,2,13,3,8,2024
+12.912131,77.608834,BTM Layout,harassment,3,9,4,4,2022
+12.913503,77.611001,BTM Layout,harassment,3,15,6,1,2022
+12.912218,77.606541,BTM Layout,chain_snatch,3,20,1,9,2022
+12.92174,77.610257,BTM Layout,robbery,4,9,5,7,2023
+12.916476,77.613454,BTM Layout,burglary,3,15,5,12,2022
+12.920046,77.600924,BTM Layout,robbery,4,15,4,3,2023
+12.918774,77.612498,BTM Layout,harassment,3,21,3,9,2024
+12.912354,77.615352,BTM Layout,robbery,4,8,3,2,2023
+12.92636,77.608899,BTM Layout,chain_snatch,3,7,5,4,2024
+12.913302,77.611506,BTM Layout,vehicle_theft,2,20,4,2,2022
+12.914852,77.611307,BTM Layout,theft,2,5,3,4,2023
+12.909874,77.615126,BTM Layout,theft,2,21,6,3,2022
+12.917095,77.608752,BTM Layout,chain_snatch,3,14,0,7,2024
+12.913663,77.613518,BTM Layout,theft,2,4,6,12,2022
+12.918248,77.614863,BTM Layout,assault,4,23,3,4,2023
+12.915986,77.614057,BTM Layout,robbery,4,7,4,3,2024
+12.914875,77.605451,BTM Layout,assault,4,14,4,7,2023
+12.918048,77.615571,BTM Layout,theft,2,13,6,10,2024
+12.974424,77.640676,Indiranagar,theft,2,0,3,11,2024
+12.976842,77.643015,Indiranagar,assault,4,10,1,8,2024
+12.984285,77.639963,Indiranagar,robbery,4,12,4,1,2022
+12.977609,77.639281,Indiranagar,theft,2,18,1,10,2022
+12.974605,77.632153,Indiranagar,chain_snatch,3,14,0,1,2024
+12.978755,77.647689,Indiranagar,assault,4,7,4,8,2022
+12.982772,77.643101,Indiranagar,theft,2,19,2,8,2022
+12.973011,77.636914,Indiranagar,vehicle_theft,2,19,2,4,2024
+12.974093,77.633685,Indiranagar,vehicle_theft,2,20,4,6,2023
+12.980829,77.646045,Indiranagar,theft,2,5,1,2,2024
+12.980967,77.645699,Indiranagar,theft,2,17,1,7,2023
+12.978108,77.636532,Indiranagar,harassment,3,11,1,6,2022
+12.980553,77.64509,Indiranagar,assault,4,19,2,10,2024
+12.977446,77.637684,Indiranagar,theft,2,17,5,12,2023
+12.976465,77.639474,Indiranagar,burglary,3,22,2,1,2022
+12.977732,77.64193,Indiranagar,theft,2,20,4,5,2023
+12.981052,77.645494,Indiranagar,harassment,3,19,2,6,2023
+12.979999,77.638195,Indiranagar,vehicle_theft,2,22,2,2,2024
+12.974505,77.63371,Indiranagar,assault,4,7,4,1,2024
+12.981413,77.642325,Indiranagar,theft,2,16,6,9,2022
+12.977564,77.637398,Indiranagar,theft,2,14,1,2,2024
+12.980132,77.645548,Indiranagar,robbery,4,19,1,9,2022
+12.979324,77.641746,Indiranagar,assault,4,15,3,1,2023
+12.972601,77.636375,Indiranagar,theft,2,22,2,7,2023
+12.975131,77.632424,Indiranagar,harassment,3,23,3,10,2023
+12.985124,77.637796,Indiranagar,assault,4,12,4,10,2023
+12.972622,77.634155,Indiranagar,theft,2,8,6,4,2022
+12.984568,77.648824,Indiranagar,burglary,3,4,3,8,2023
+12.977175,77.641062,Indiranagar,assault,4,17,2,1,2024
+12.982864,77.638203,Indiranagar,theft,2,3,5,5,2024
+12.974782,77.639588,Indiranagar,chain_snatch,3,15,0,7,2022
+12.984454,77.643323,Indiranagar,theft,2,9,2,9,2023
+12.983284,77.643128,Indiranagar,burglary,3,13,2,6,2024
+12.985938,77.646973,Indiranagar,chain_snatch,3,12,0,4,2022
+12.981272,77.647502,Indiranagar,vehicle_theft,2,8,5,6,2022
+12.976066,77.635596,Indiranagar,harassment,3,20,4,4,2022
+12.982037,77.646512,Indiranagar,robbery,4,22,5,7,2024
+12.982001,77.643912,Indiranagar,assault,4,13,5,12,2022
+12.977999,77.639985,Indiranagar,chain_snatch,3,18,3,7,2024
+12.978134,77.641781,Indiranagar,theft,2,20,6,10,2022
+12.976296,77.640744,Indiranagar,chain_snatch,3,4,3,2,2023
+12.982684,77.637887,Indiranagar,assault,4,11,5,2,2024
+12.97215,77.638684,Indiranagar,vehicle_theft,2,16,0,5,2023
+12.975049,77.643243,Indiranagar,vehicle_theft,2,7,0,3,2024
+12.975166,77.639539,Indiranagar,vehicle_theft,2,17,1,5,2024
+12.98247,77.651453,Indiranagar,theft,2,20,4,2,2023
+12.987095,77.644561,Indiranagar,assault,4,20,5,6,2023
+12.976606,77.64884,Indiranagar,assault,4,8,2,7,2023
+12.97719,77.63754,Indiranagar,theft,2,20,2,3,2024
+12.978914,77.645063,Indiranagar,assault,4,11,3,4,2023
+13.022033,77.541847,Yeshwanthpur,theft,2,21,1,12,2023
+13.022126,77.545312,Yeshwanthpur,assault,4,16,3,1,2023
+13.027354,77.550122,Yeshwanthpur,assault,4,6,1,11,2024
+13.028283,77.545271,Yeshwanthpur,robbery,4,8,4,5,2024
+13.023395,77.551927,Yeshwanthpur,burglary,3,8,3,4,2023
+13.021861,77.546485,Yeshwanthpur,chain_snatch,3,11,4,12,2024
+13.02456,77.54593,Yeshwanthpur,robbery,4,20,6,1,2024
+13.01951,77.552795,Yeshwanthpur,assault,4,6,3,6,2023
+13.023331,77.547032,Yeshwanthpur,robbery,4,7,0,4,2022
+13.024374,77.5478,Yeshwanthpur,chain_snatch,3,9,3,9,2023
+13.021985,77.540279,Yeshwanthpur,assault,4,19,6,12,2022
+13.021207,77.552071,Yeshwanthpur,robbery,4,14,1,5,2023
+13.021633,77.54441,Yeshwanthpur,theft,2,9,6,2,2023
+13.02953,77.550154,Yeshwanthpur,burglary,3,13,3,11,2023
+13.02469,77.54494,Yeshwanthpur,vehicle_theft,2,17,1,3,2024
+13.025547,77.5462,Yeshwanthpur,theft,2,21,6,3,2023
+13.027315,77.542833,Yeshwanthpur,assault,4,11,5,4,2022
+13.018352,77.551437,Yeshwanthpur,chain_snatch,3,20,0,6,2024
+13.016956,77.542388,Yeshwanthpur,theft,2,8,5,4,2022
+13.021059,77.547738,Yeshwanthpur,assault,4,12,5,10,2023
+13.025252,77.547062,Yeshwanthpur,theft,2,21,1,3,2022
+13.027213,77.556327,Yeshwanthpur,chain_snatch,3,23,3,7,2022
+13.024558,77.545517,Yeshwanthpur,theft,2,21,4,4,2022
+13.015659,77.546915,Yeshwanthpur,theft,2,0,2,5,2024
+13.020577,77.548695,Yeshwanthpur,theft,2,19,3,8,2023
+13.022782,77.547425,Yeshwanthpur,burglary,3,17,0,12,2024
+13.030643,77.551537,Yeshwanthpur,theft,2,20,3,5,2024
+13.021147,77.548211,Yeshwanthpur,assault,4,19,2,1,2023
+13.012387,77.550812,Yeshwanthpur,harassment,3,16,3,6,2023
+13.02265,77.551911,Yeshwanthpur,chain_snatch,3,17,4,3,2023
+13.023502,77.541692,Yeshwanthpur,assault,4,18,3,4,2023
+13.019616,77.544376,Yeshwanthpur,chain_snatch,3,23,2,7,2022
+13.022778,77.547363,Yeshwanthpur,assault,4,17,0,12,2023
+13.022319,77.539829,Yeshwanthpur,theft,2,7,5,3,2022
+13.027836,77.548584,Yeshwanthpur,assault,4,17,0,8,2024
+13.013663,77.542335,Yeshwanthpur,harassment,3,10,5,10,2024
+13.020877,77.551515,Yeshwanthpur,theft,2,10,0,8,2022
+13.023126,77.552405,Yeshwanthpur,robbery,4,15,2,3,2024
+13.017689,77.540668,Yeshwanthpur,theft,2,10,3,8,2022
+13.026885,77.545931,Yeshwanthpur,burglary,3,17,6,12,2023
+13.021692,77.550403,Yeshwanthpur,chain_snatch,3,21,3,1,2024
+13.027728,77.556896,Yeshwanthpur,burglary,3,5,0,1,2023
+13.030328,77.543839,Yeshwanthpur,robbery,4,19,1,2,2024
+13.026033,77.549033,Yeshwanthpur,assault,4,0,0,7,2024
+13.018625,77.548534,Yeshwanthpur,chain_snatch,3,6,0,9,2023
+13.022456,77.545025,Yeshwanthpur,assault,4,13,4,5,2023
+13.026622,77.553249,Yeshwanthpur,assault,4,11,3,5,2023
+13.023524,77.54488,Yeshwanthpur,harassment,3,12,5,10,2023
+13.024355,77.549141,Yeshwanthpur,robbery,4,20,6,9,2024
+13.022887,77.546718,Yeshwanthpur,theft,2,21,6,2,2022
+13.024111,77.539636,Yeshwanthpur,burglary,3,2,1,12,2024
+13.016466,77.544877,Yeshwanthpur,robbery,4,4,5,5,2023
+13.019447,77.548667,Yeshwanthpur,harassment,3,16,0,2,2022
+13.018741,77.548491,Yeshwanthpur,theft,2,23,1,11,2023
+13.022165,77.554495,Yeshwanthpur,theft,2,12,5,10,2022
+13.021301,77.538953,Yeshwanthpur,chain_snatch,3,12,5,4,2023
+13.017041,77.542155,Yeshwanthpur,chain_snatch,3,23,5,4,2022
+13.029491,77.549102,Yeshwanthpur,theft,2,16,2,7,2024
+13.01976,77.550327,Yeshwanthpur,robbery,4,20,4,12,2022
+13.027046,77.540801,Yeshwanthpur,vehicle_theft,2,16,4,3,2022
+13.024367,77.551698,Yeshwanthpur,burglary,3,14,0,8,2023
+13.023539,77.547761,Yeshwanthpur,assault,4,19,4,4,2023
+13.024215,77.549971,Yeshwanthpur,theft,2,22,4,12,2023
+13.024277,77.546727,Yeshwanthpur,theft,2,20,3,9,2023
+13.023275,77.550715,Yeshwanthpur,theft,2,23,3,12,2023
+13.019577,77.545485,Yeshwanthpur,assault,4,12,6,11,2024
+13.025346,77.549328,Yeshwanthpur,harassment,3,12,2,2,2024
+13.022773,77.553662,Yeshwanthpur,burglary,3,17,6,9,2022
+13.022659,77.552114,Yeshwanthpur,robbery,4,20,4,7,2023
+13.027008,77.552505,Yeshwanthpur,assault,4,18,1,5,2023
+13.028988,77.548664,Yeshwanthpur,robbery,4,19,2,3,2023
+13.0261,77.550165,Yeshwanthpur,burglary,3,20,0,5,2022
+13.027956,77.550933,Yeshwanthpur,chain_snatch,3,19,3,3,2023
+13.019361,77.552,Yeshwanthpur,theft,2,12,3,6,2024
+13.015626,77.548953,Yeshwanthpur,robbery,4,6,0,7,2023
+13.01677,77.545049,Yeshwanthpur,chain_snatch,3,18,3,2,2024
+13.021323,77.545309,Yeshwanthpur,robbery,4,10,5,7,2022
+13.021574,77.542569,Yeshwanthpur,harassment,3,16,0,6,2024
+12.981903,77.570555,Majestic,burglary,3,21,5,4,2023
+12.978605,77.573322,Majestic,theft,2,19,5,4,2022
+12.972208,77.570003,Majestic,harassment,3,19,1,2,2023
+12.973219,77.570445,Majestic,chain_snatch,3,10,0,10,2022
+12.975388,77.571921,Majestic,theft,2,10,1,8,2022
+12.976022,77.571898,Majestic,robbery,4,22,0,11,2023
+12.976062,77.57508,Majestic,robbery,4,20,0,6,2024
+12.966945,77.570763,Majestic,theft,2,18,2,9,2024
+12.980562,77.576245,Majestic,theft,2,8,0,8,2024
+12.974229,77.570036,Majestic,vehicle_theft,2,18,2,3,2022
+12.976702,77.573705,Majestic,theft,2,12,0,3,2024
+12.975554,77.57261,Majestic,theft,2,17,4,4,2024
+12.97827,77.573818,Majestic,burglary,3,12,5,1,2022
+12.979392,77.570642,Majestic,chain_snatch,3,2,3,2,2024
+12.982892,77.568254,Majestic,robbery,4,17,5,1,2022
+12.969725,77.571776,Majestic,theft,2,12,4,10,2023
+12.978713,77.574552,Majestic,theft,2,21,5,10,2024
+12.98635,77.574438,Majestic,assault,4,13,4,11,2022
+12.971977,77.575757,Majestic,vehicle_theft,2,15,3,1,2023
+12.975933,77.568534,Majestic,harassment,3,16,0,2,2022
+12.980623,77.568331,Majestic,theft,2,0,1,7,2022
+12.980655,77.565894,Majestic,robbery,4,0,6,4,2024
+12.978185,77.575913,Majestic,burglary,3,16,4,6,2024
+12.973727,77.568112,Majestic,robbery,4,4,3,12,2024
+12.985206,77.573032,Majestic,burglary,3,16,2,12,2023
+12.975199,77.570029,Majestic,robbery,4,9,1,9,2023
+12.976786,77.572811,Majestic,robbery,4,10,3,12,2024
+12.975764,77.573165,Majestic,theft,2,11,3,9,2024
+12.978498,77.572094,Majestic,theft,2,18,3,4,2022
+12.976851,77.573638,Majestic,robbery,4,7,6,10,2022
+12.97147,77.572067,Majestic,vehicle_theft,2,17,6,3,2023
+12.977906,77.574052,Majestic,harassment,3,14,0,11,2022
+12.973653,77.57254,Majestic,assault,4,12,3,3,2024
+12.975005,77.564831,Majestic,vehicle_theft,2,16,2,7,2024
+12.97341,77.576568,Majestic,theft,2,0,0,11,2024
+12.974134,77.573251,Majestic,assault,4,23,5,4,2024
+12.978949,77.572969,Majestic,theft,2,14,3,9,2022
+12.971698,77.573718,Majestic,theft,2,12,3,8,2023
+12.973321,77.568028,Majestic,assault,4,20,4,3,2022
+12.976671,77.57376,Majestic,theft,2,21,0,7,2022
+12.969881,77.56961,Majestic,burglary,3,5,0,2,2022
+12.982215,77.566321,Majestic,theft,2,16,1,1,2023
+12.973484,77.574284,Majestic,harassment,3,23,0,1,2023
+12.977124,77.573638,Majestic,harassment,3,10,2,8,2024
+12.975973,77.571993,Majestic,robbery,4,11,6,7,2024
+12.979348,77.573456,Majestic,harassment,3,12,3,2,2022
+12.980248,77.569617,Majestic,assault,4,8,3,9,2024
+12.966283,77.572096,Majestic,theft,2,22,2,8,2024
+12.979421,77.57607,Majestic,robbery,4,18,2,2,2022
+12.978174,77.570582,Majestic,assault,4,2,6,5,2023
+12.976006,77.569091,Majestic,assault,4,17,0,10,2024
+12.98068,77.57065,Majestic,theft,2,0,5,4,2023
+12.982631,77.569376,Majestic,chain_snatch,3,17,1,2,2023
+12.974842,77.573148,Majestic,robbery,4,19,5,11,2024
+12.97431,77.576989,Majestic,chain_snatch,3,23,4,8,2022
+12.977233,77.564303,Majestic,robbery,4,13,0,11,2023
+12.977278,77.573266,Majestic,assault,4,12,2,5,2022
+12.967463,77.571928,Majestic,theft,2,15,0,8,2023
+12.979964,77.571003,Majestic,burglary,3,19,6,10,2024
+12.975227,77.569461,Majestic,harassment,3,11,3,4,2022
+12.978531,77.577998,Majestic,harassment,3,18,6,1,2022
+12.979482,77.574696,Majestic,robbery,4,7,1,1,2024
+12.978645,77.576292,Majestic,chain_snatch,3,6,1,7,2024
+12.985859,77.57901,Majestic,assault,4,18,4,1,2022
+12.978668,77.569196,Majestic,burglary,3,21,2,3,2024
+12.980917,77.577274,Majestic,harassment,3,20,1,8,2023
+12.979434,77.565836,Majestic,burglary,3,20,2,2,2024
+12.975223,77.571874,Majestic,harassment,3,0,0,12,2023
+12.979405,77.570751,Majestic,robbery,4,8,4,9,2023
+12.974006,77.570367,Majestic,burglary,3,9,0,3,2023
+12.978864,77.570686,Majestic,robbery,4,3,4,4,2023
+12.979386,77.573946,Majestic,chain_snatch,3,6,4,8,2022
+12.97832,77.571131,Majestic,robbery,4,22,1,6,2023
+12.980261,77.575441,Majestic,theft,2,12,0,1,2024
+12.978262,77.581116,Majestic,assault,4,4,2,2,2023
+12.971956,77.57268,Majestic,burglary,3,7,6,6,2024
+12.973156,77.570935,Majestic,robbery,4,18,1,5,2023
+12.97008,77.579846,Majestic,burglary,3,12,5,9,2024
+12.97584,77.572407,Majestic,theft,2,17,5,4,2023
+12.97117,77.577463,Majestic,robbery,4,3,6,1,2022
+12.981197,77.569964,Majestic,assault,4,22,1,6,2023
+12.973242,77.570736,Majestic,theft,2,0,2,5,2024
+12.976916,77.576687,Majestic,chain_snatch,3,21,2,10,2024
+12.971531,77.574059,Majestic,assault,4,17,3,8,2024
+12.973565,77.568538,Majestic,theft,2,21,4,11,2023
+12.979428,77.577249,Majestic,theft,2,14,2,2,2023
+12.839364,77.667371,Electronic City,robbery,4,21,6,8,2023
+12.84381,77.673989,Electronic City,robbery,4,15,0,9,2022
+12.836756,77.671476,Electronic City,assault,4,15,5,5,2022
+12.843897,77.676052,Electronic City,theft,2,20,2,12,2023
+12.842053,77.677737,Electronic City,robbery,4,13,3,2,2023
+12.834734,77.678708,Electronic City,assault,4,20,5,7,2022
+12.837176,77.673393,Electronic City,assault,4,1,2,6,2023
+12.84007,77.672984,Electronic City,robbery,4,22,0,10,2022
+12.839064,77.682072,Electronic City,chain_snatch,3,19,3,5,2022
+12.851696,77.681979,Electronic City,robbery,4,9,4,10,2022
+12.842146,77.679426,Electronic City,chain_snatch,3,9,5,10,2022
+12.84416,77.668439,Electronic City,assault,4,22,2,7,2023
+12.838603,77.680212,Electronic City,assault,4,20,2,9,2024
+12.835949,77.679139,Electronic City,burglary,3,7,5,4,2024
+12.842378,77.678643,Electronic City,assault,4,13,4,6,2023
+12.835947,77.669869,Electronic City,theft,2,16,1,3,2023
+12.836008,77.677838,Electronic City,theft,2,17,1,12,2024
+12.83439,77.674741,Electronic City,theft,2,3,6,12,2024
+12.845267,77.667677,Electronic City,assault,4,13,1,8,2024
+12.842021,77.669166,Electronic City,chain_snatch,3,8,0,2,2022
+12.836198,77.678022,Electronic City,assault,4,6,4,7,2023
+12.842896,77.681435,Electronic City,assault,4,6,1,1,2024
+12.850383,77.672552,Electronic City,robbery,4,0,4,11,2023
+12.841023,77.684034,Electronic City,theft,2,0,0,9,2023
+12.844286,77.674497,Electronic City,harassment,3,14,5,3,2024
+12.8367,77.676746,Electronic City,harassment,3,21,5,9,2023
+12.843294,77.668012,Electronic City,harassment,3,8,3,12,2022
+12.841071,77.677032,Electronic City,vehicle_theft,2,13,3,11,2023
+12.834883,77.671116,Electronic City,robbery,4,9,2,7,2023
+12.839378,77.675419,Electronic City,robbery,4,12,2,11,2023
+12.840974,77.683052,Electronic City,burglary,3,14,0,4,2022
+12.842905,77.679496,Electronic City,assault,4,20,1,4,2022
+12.836696,77.683026,Electronic City,theft,2,9,3,9,2024
+12.840689,77.678245,Electronic City,harassment,3,19,2,5,2023
+12.83577,77.678592,Electronic City,harassment,3,16,1,11,2023
+12.841458,77.672086,Electronic City,robbery,4,16,1,12,2023
+12.840789,77.675083,Electronic City,assault,4,8,3,3,2023
+12.846105,77.668334,Electronic City,assault,4,22,0,3,2023
+12.84509,77.677457,Electronic City,chain_snatch,3,9,4,10,2023
+12.843293,77.67207,Electronic City,theft,2,17,6,4,2024
+12.842857,77.680265,Electronic City,vehicle_theft,2,20,0,12,2022
+12.843642,77.676184,Electronic City,assault,4,10,6,5,2023
+12.842583,77.675831,Electronic City,burglary,3,11,4,6,2023
+12.837071,77.677501,Electronic City,harassment,3,9,2,4,2024
+12.849698,77.672295,Electronic City,harassment,3,20,4,1,2024
+12.841235,77.682725,Electronic City,theft,2,12,6,12,2022
+12.842388,77.682316,Electronic City,theft,2,0,3,7,2024
+12.839387,77.679639,Electronic City,assault,4,0,4,10,2024
+12.838494,77.683254,Electronic City,assault,4,23,1,11,2022
+12.841371,77.6686,Electronic City,theft,2,17,2,5,2024
+12.839416,77.681499,Electronic City,robbery,4,14,5,9,2023
+12.844658,77.681684,Electronic City,theft,2,14,1,8,2024
+12.84053,77.675055,Electronic City,harassment,3,17,0,9,2023
+12.844823,77.68374,Electronic City,theft,2,7,6,8,2023
+12.838559,77.678369,Electronic City,assault,4,18,3,2,2022
+13.037758,77.598068,Hebbal,assault,4,14,3,8,2023
+13.028781,77.599155,Hebbal,robbery,4,7,3,6,2023
+13.041913,77.600024,Hebbal,chain_snatch,3,5,4,8,2023
+13.030878,77.599491,Hebbal,theft,2,17,4,11,2024
+13.036391,77.597773,Hebbal,burglary,3,12,0,3,2024
+13.036555,77.597299,Hebbal,theft,2,21,6,5,2023
+13.027339,77.591994,Hebbal,theft,2,11,0,10,2023
+13.033817,77.602469,Hebbal,robbery,4,16,1,2,2024
+13.028591,77.595149,Hebbal,assault,4,10,2,8,2022
+13.03232,77.591816,Hebbal,theft,2,7,4,4,2022
+13.038804,77.603002,Hebbal,theft,2,21,5,5,2023
+13.035866,77.596596,Hebbal,chain_snatch,3,10,0,7,2024
+13.034933,77.594458,Hebbal,robbery,4,20,0,6,2022
+13.036096,77.592844,Hebbal,robbery,4,16,0,8,2023
+13.03519,77.603816,Hebbal,theft,2,14,3,6,2024
+13.034182,77.597969,Hebbal,burglary,3,6,6,4,2024
+13.036448,77.59198,Hebbal,chain_snatch,3,6,0,12,2023
+13.031887,77.600848,Hebbal,harassment,3,12,6,6,2022
+13.037168,77.595278,Hebbal,theft,2,9,5,6,2024
+13.040272,77.594947,Hebbal,assault,4,7,2,11,2022
+13.045318,77.606069,Hebbal,chain_snatch,3,16,6,6,2022
+13.034811,77.594869,Hebbal,burglary,3,17,0,6,2022
+13.031401,77.593866,Hebbal,assault,4,8,2,7,2023
+13.037118,77.602461,Hebbal,burglary,3,22,4,1,2022
+13.03572,77.603447,Hebbal,burglary,3,17,5,7,2022
+13.03386,77.598532,Hebbal,chain_snatch,3,12,4,5,2024
+13.033891,77.605103,Hebbal,burglary,3,9,3,5,2024
+13.03229,77.599773,Hebbal,burglary,3,10,6,12,2022
+13.038924,77.603224,Hebbal,chain_snatch,3,22,1,3,2024
+13.036514,77.591291,Hebbal,assault,4,18,4,5,2024
+13.039888,77.593726,Hebbal,harassment,3,12,2,6,2022
+13.031414,77.592071,Hebbal,theft,2,13,1,8,2024
+13.031018,77.599184,Hebbal,burglary,3,17,3,2,2023
+13.031843,77.600821,Hebbal,vehicle_theft,2,21,2,4,2023
+13.027157,77.599316,Hebbal,assault,4,18,3,3,2023
+13.038801,77.595182,Hebbal,theft,2,7,1,2,2022
+13.037962,77.596238,Hebbal,harassment,3,8,3,11,2022
+13.031879,77.591959,Hebbal,theft,2,19,4,9,2024
+13.043703,77.595511,Hebbal,assault,4,9,1,4,2023
+13.034617,77.602915,Hebbal,theft,2,10,0,5,2023
+13.040484,77.594172,Hebbal,burglary,3,21,3,7,2024
+13.03599,77.597308,Hebbal,theft,2,13,4,9,2022
+13.031279,77.596847,Hebbal,chain_snatch,3,8,4,10,2023
+13.040008,77.604289,Hebbal,theft,2,19,1,5,2023
+13.038809,77.602006,Hebbal,harassment,3,11,1,5,2024
+13.034533,77.600437,Hebbal,assault,4,18,0,4,2022
+13.034435,77.597674,Hebbal,theft,2,9,4,7,2022
+13.041466,77.599408,Hebbal,theft,2,23,3,3,2023
+13.036572,77.59851,Hebbal,harassment,3,9,6,6,2023
+13.032609,77.600029,Hebbal,chain_snatch,3,1,1,7,2024
+13.029318,77.596064,Hebbal,theft,2,18,6,1,2022
+13.036493,77.598773,Hebbal,theft,2,18,5,6,2024
+13.033066,77.601154,Hebbal,robbery,4,12,1,1,2023
+13.033595,77.599207,Hebbal,assault,4,14,6,8,2022
+13.032542,77.600588,Hebbal,assault,4,19,2,12,2023
+13.042747,77.591275,Hebbal,burglary,3,4,6,5,2023
+12.953057,77.705263,Marathahalli,theft,2,18,0,7,2024
+12.959505,77.700181,Marathahalli,assault,4,19,2,3,2024
+12.960902,77.705689,Marathahalli,robbery,4,20,0,7,2024
+12.960032,77.707469,Marathahalli,vehicle_theft,2,13,5,5,2024
+12.96047,77.699569,Marathahalli,robbery,4,8,5,4,2022
+12.957036,77.702025,Marathahalli,theft,2,15,6,11,2024
+12.960101,77.703671,Marathahalli,vehicle_theft,2,9,0,3,2023
+12.956268,77.708172,Marathahalli,chain_snatch,3,15,3,2,2024
+12.957613,77.699837,Marathahalli,harassment,3,18,4,7,2023
+12.968601,77.690243,Marathahalli,theft,2,20,4,10,2023
+12.965231,77.698131,Marathahalli,robbery,4,2,4,6,2023
+12.965153,77.695027,Marathahalli,robbery,4,7,4,11,2023
+12.964329,77.705251,Marathahalli,theft,2,17,0,11,2022
+12.958414,77.704697,Marathahalli,theft,2,4,3,7,2023
+12.952205,77.708824,Marathahalli,chain_snatch,3,7,1,10,2022
+12.95736,77.69709,Marathahalli,burglary,3,11,1,3,2024
+12.961165,77.699468,Marathahalli,theft,2,20,3,9,2023
+12.958567,77.700797,Marathahalli,harassment,3,9,2,5,2024
+12.956493,77.704918,Marathahalli,assault,4,0,1,12,2022
+12.959431,77.698037,Marathahalli,assault,4,0,6,8,2024
+12.954552,77.699664,Marathahalli,theft,2,15,6,1,2022
+12.953433,77.704329,Marathahalli,theft,2,5,6,10,2024
+12.951471,77.698198,Marathahalli,theft,2,14,3,4,2024
+12.96131,77.699854,Marathahalli,theft,2,9,4,4,2022
+12.965992,77.69744,Marathahalli,theft,2,12,4,6,2023
+12.961301,77.696349,Marathahalli,robbery,4,18,4,4,2023
+12.96265,77.702262,Marathahalli,robbery,4,11,6,9,2022
+12.959714,77.699405,Marathahalli,assault,4,6,2,5,2023
+12.962772,77.708218,Marathahalli,burglary,3,10,4,3,2024
+12.95306,77.69338,Marathahalli,assault,4,17,3,8,2022
+12.958974,77.699369,Marathahalli,assault,4,17,0,11,2024
+12.952523,77.70154,Marathahalli,theft,2,17,0,1,2024
+12.961854,77.698003,Marathahalli,vehicle_theft,2,10,1,10,2024
+12.962802,77.702705,Marathahalli,theft,2,23,3,3,2023
+12.961935,77.700678,Marathahalli,harassment,3,22,0,8,2022
+12.954541,77.703336,Marathahalli,burglary,3,9,0,4,2023
+12.958055,77.692441,Marathahalli,theft,2,19,1,12,2022
+12.958458,77.699613,Marathahalli,assault,4,0,3,7,2023
+12.957017,77.697419,Marathahalli,robbery,4,16,6,9,2023
+12.95453,77.702186,Marathahalli,robbery,4,20,6,8,2022
+12.952526,77.705135,Marathahalli,theft,2,5,1,12,2023
+12.960116,77.693468,Marathahalli,theft,2,19,4,4,2022
+12.964416,77.708255,Marathahalli,robbery,4,20,6,11,2024
+12.958549,77.696692,Marathahalli,harassment,3,11,5,6,2022
+12.955687,77.699388,Marathahalli,burglary,3,16,3,1,2022
+12.961931,77.699641,Marathahalli,assault,4,15,6,8,2024
+12.954591,77.701612,Marathahalli,theft,2,21,5,7,2022
+12.955753,77.70102,Marathahalli,vehicle_theft,2,16,0,6,2023
+12.95788,77.700053,Marathahalli,burglary,3,12,3,12,2024
+12.958938,77.702211,Marathahalli,theft,2,20,5,10,2024
+12.958156,77.692915,Marathahalli,harassment,3,14,0,1,2023
+12.956031,77.699304,Marathahalli,burglary,3,18,2,12,2024
+12.952889,77.702785,Marathahalli,burglary,3,6,6,4,2024
+12.954473,77.702698,Marathahalli,assault,4,19,3,9,2023
+12.956659,77.703717,Marathahalli,robbery,4,14,3,8,2023
+12.954972,77.697057,Marathahalli,assault,4,10,0,4,2024
+12.956197,77.700721,Marathahalli,chain_snatch,3,23,2,10,2023
+12.967083,77.700822,Marathahalli,chain_snatch,3,2,5,4,2023
+12.959354,77.702545,Marathahalli,burglary,3,7,3,6,2024
+12.953737,77.700304,Marathahalli,robbery,4,17,1,6,2023
+12.966109,77.701783,Marathahalli,robbery,4,22,0,9,2022
+12.955341,77.707414,Marathahalli,burglary,3,11,0,7,2023
+12.964937,77.701898,Marathahalli,robbery,4,12,1,12,2024
+12.958474,77.698923,Marathahalli,vehicle_theft,2,12,3,3,2023
+12.958655,77.705142,Marathahalli,assault,4,6,0,3,2023
+12.967171,77.697783,Marathahalli,robbery,4,18,5,7,2022
+12.968978,77.698731,Marathahalli,vehicle_theft,2,18,4,2,2023
+12.961131,77.69719,Marathahalli,harassment,3,10,3,1,2024
+12.958715,77.69927,Marathahalli,burglary,3,9,4,3,2022
+12.967155,77.702236,Marathahalli,theft,2,10,5,9,2023
+12.963448,77.70157,Marathahalli,theft,2,21,6,4,2022
+12.912706,77.625542,HSR Layout,assault,4,11,5,6,2024
+12.906032,77.634856,HSR Layout,chain_snatch,3,22,6,7,2022
+12.913344,77.628771,HSR Layout,theft,2,21,6,5,2023
+12.9089,77.637288,HSR Layout,burglary,3,14,6,2,2024
+12.914963,77.639731,HSR Layout,robbery,4,3,3,6,2022
+12.910541,77.633448,HSR Layout,harassment,3,20,2,2,2022
+12.901863,77.632859,HSR Layout,assault,4,4,4,7,2024
+12.906224,77.640921,HSR Layout,vehicle_theft,2,16,6,1,2022
+12.913596,77.641154,HSR Layout,theft,2,20,4,11,2023
+12.913324,77.636359,HSR Layout,assault,4,12,4,3,2023
+12.908284,77.636413,HSR Layout,robbery,4,21,6,4,2024
+12.918383,77.646489,HSR Layout,theft,2,4,0,12,2023
+12.912301,77.633553,HSR Layout,vehicle_theft,2,2,4,12,2022
+12.90334,77.631103,HSR Layout,robbery,4,17,1,12,2022
+12.90505,77.639378,HSR Layout,theft,2,6,0,7,2024
+12.91055,77.636895,HSR Layout,burglary,3,19,2,12,2024
+12.910391,77.628487,HSR Layout,burglary,3,17,3,12,2022
+12.913716,77.639128,HSR Layout,theft,2,23,6,5,2022
+12.913216,77.633515,HSR Layout,theft,2,17,4,2,2024
+12.90801,77.633651,HSR Layout,harassment,3,4,2,3,2024
+12.920828,77.638185,HSR Layout,robbery,4,18,2,7,2023
+12.916483,77.635393,HSR Layout,theft,2,20,3,12,2024
+12.909398,77.647211,HSR Layout,robbery,4,15,5,7,2023
+12.90468,77.646433,HSR Layout,theft,2,17,4,9,2022
+12.910808,77.647172,HSR Layout,theft,2,12,6,11,2023
+12.92188,77.633467,HSR Layout,assault,4,7,4,12,2023
+12.910866,77.632221,HSR Layout,theft,2,20,3,11,2023
+12.906403,77.637404,HSR Layout,robbery,4,19,4,1,2024
+12.912253,77.637423,HSR Layout,robbery,4,21,1,9,2023
+12.915576,77.635267,HSR Layout,theft,2,14,4,11,2023
+12.908914,77.639352,HSR Layout,theft,2,7,2,2,2022
+12.914602,77.633695,HSR Layout,robbery,4,6,0,1,2023
+12.916612,77.640467,HSR Layout,assault,4,21,2,9,2023
+12.909311,77.63574,HSR Layout,harassment,3,16,3,8,2024
+12.918008,77.645622,HSR Layout,robbery,4,13,5,9,2024
+12.905643,77.639276,HSR Layout,theft,2,8,3,8,2022
+12.916948,77.64363,HSR Layout,chain_snatch,3,0,0,10,2022
+12.911171,77.642898,HSR Layout,theft,2,7,3,2,2024
+12.914198,77.637444,HSR Layout,burglary,3,22,6,9,2023
+12.919799,77.638903,HSR Layout,theft,2,9,1,12,2022
+12.906202,77.637239,HSR Layout,chain_snatch,3,11,6,5,2024
+12.90982,77.635287,HSR Layout,robbery,4,12,6,1,2022
+12.906109,77.640306,HSR Layout,burglary,3,19,5,3,2023
+12.915739,77.633219,HSR Layout,theft,2,9,5,11,2024
+12.913459,77.640684,HSR Layout,assault,4,22,6,9,2024
+12.916551,77.644416,HSR Layout,chain_snatch,3,7,5,3,2022
+12.910432,77.637084,HSR Layout,theft,2,14,3,4,2024
+12.90934,77.640593,HSR Layout,harassment,3,10,1,7,2023
+12.920483,77.638935,HSR Layout,burglary,3,11,1,3,2023
+12.911084,77.640263,HSR Layout,robbery,4,20,6,11,2024
+12.915718,77.642389,HSR Layout,vehicle_theft,2,11,5,4,2024
+12.911893,77.638299,HSR Layout,harassment,3,8,2,6,2024
+12.912315,77.643817,HSR Layout,robbery,4,8,1,4,2022
+12.916702,77.638293,HSR Layout,assault,4,17,2,4,2024
+12.916473,77.643129,HSR Layout,theft,2,20,6,1,2024
+12.909544,77.638067,HSR Layout,burglary,3,11,2,2,2024
+12.925241,77.59519,Jayanagar,burglary,3,17,5,4,2022
+12.925755,77.587103,Jayanagar,theft,2,3,4,2,2023
+12.937972,77.603032,Jayanagar,robbery,4,21,5,8,2024
+12.928982,77.600613,Jayanagar,theft,2,4,4,4,2022
+12.92163,77.595413,Jayanagar,robbery,4,20,1,7,2023
+12.921642,77.598191,Jayanagar,harassment,3,18,0,5,2022
+12.919364,77.592165,Jayanagar,harassment,3,11,0,11,2023
+12.925598,77.592646,Jayanagar,harassment,3,19,0,1,2022
+12.920066,77.587841,Jayanagar,theft,2,15,0,12,2023
+12.924574,77.591985,Jayanagar,theft,2,2,1,6,2022
+12.925796,77.594464,Jayanagar,chain_snatch,3,18,1,7,2023
+12.926109,77.593711,Jayanagar,theft,2,19,1,10,2024
+12.925903,77.59387,Jayanagar,chain_snatch,3,9,3,2,2024
+12.923339,77.597223,Jayanagar,theft,2,15,1,3,2024
+12.919643,77.594439,Jayanagar,theft,2,21,5,9,2024
+12.926544,77.593602,Jayanagar,theft,2,12,5,3,2022
+12.930074,77.589897,Jayanagar,assault,4,20,1,1,2023
+12.923461,77.594955,Jayanagar,robbery,4,8,6,3,2022
+12.92694,77.591929,Jayanagar,theft,2,21,4,6,2022
+12.922453,77.595479,Jayanagar,theft,2,14,2,6,2023
+12.922443,77.590236,Jayanagar,assault,4,19,6,2,2023
+12.933546,77.588745,Jayanagar,vehicle_theft,2,19,1,10,2023
+12.92762,77.597043,Jayanagar,robbery,4,15,3,1,2023
+12.922466,77.596458,Jayanagar,theft,2,12,0,7,2024
+12.924463,77.595448,Jayanagar,theft,2,22,6,4,2022
+12.925135,77.601332,Jayanagar,harassment,3,6,1,1,2024
+12.931281,77.593288,Jayanagar,burglary,3,14,2,7,2022
+12.929728,77.595724,Jayanagar,theft,2,22,6,9,2022
+12.925752,77.596489,Jayanagar,assault,4,18,1,2,2023
+12.923888,77.592451,Jayanagar,chain_snatch,3,12,6,10,2024
+12.921059,77.59942,Jayanagar,burglary,3,17,2,12,2022
+12.915808,77.591725,Jayanagar,theft,2,14,1,7,2022
+12.923538,77.593195,Jayanagar,robbery,4,18,4,11,2022
+12.923192,77.590643,Jayanagar,robbery,4,5,0,8,2022
+12.927883,77.591451,Jayanagar,harassment,3,12,3,1,2022
+12.927651,77.590571,Jayanagar,theft,2,23,4,2,2024
+12.926476,77.596229,Jayanagar,theft,2,5,3,5,2022
+12.922043,77.598568,Jayanagar,robbery,4,12,1,11,2024
+12.924039,77.587121,Jayanagar,harassment,3,2,4,7,2024
+12.920624,77.597316,Jayanagar,theft,2,14,0,2,2022
+12.917757,77.595732,Jayanagar,theft,2,22,3,1,2024
+12.999175,77.553379,Rajajinagar,robbery,4,20,4,6,2024
+12.992922,77.555434,Rajajinagar,robbery,4,16,5,10,2022
+13.00281,77.554575,Rajajinagar,assault,4,17,5,11,2023
+12.993934,77.562259,Rajajinagar,theft,2,10,6,3,2022
+12.991944,77.559347,Rajajinagar,robbery,4,17,1,12,2022
+12.990256,77.555014,Rajajinagar,burglary,3,9,3,4,2023
+12.990123,77.549265,Rajajinagar,theft,2,12,3,2,2024
+12.997534,77.55737,Rajajinagar,harassment,3,14,5,3,2023
+12.989086,77.555555,Rajajinagar,harassment,3,15,1,12,2024
+12.995369,77.550215,Rajajinagar,burglary,3,11,2,6,2024
+12.999899,77.551213,Rajajinagar,harassment,3,5,6,3,2023
+12.995021,77.548262,Rajajinagar,chain_snatch,3,20,4,9,2024
+12.990885,77.559932,Rajajinagar,burglary,3,22,6,10,2023
+12.992932,77.552781,Rajajinagar,assault,4,10,2,1,2024
+13.000232,77.549615,Rajajinagar,burglary,3,8,3,2,2022
+12.991063,77.557934,Rajajinagar,theft,2,6,4,3,2024
+13.007008,77.551106,Rajajinagar,burglary,3,17,2,12,2022
+12.997745,77.552644,Rajajinagar,chain_snatch,3,20,1,12,2022
+12.996174,77.548791,Rajajinagar,burglary,3,13,1,7,2024
+12.986089,77.554319,Rajajinagar,assault,4,11,6,10,2023
+12.990946,77.555475,Rajajinagar,assault,4,19,4,8,2023
+12.983582,77.55308,Rajajinagar,burglary,3,9,3,9,2023
+12.99046,77.556395,Rajajinagar,theft,2,15,1,9,2023
+12.997081,77.555887,Rajajinagar,robbery,4,19,1,2,2024
+13.00308,77.549905,Rajajinagar,robbery,4,2,5,2,2023
+12.993247,77.557251,Rajajinagar,robbery,4,17,6,4,2022
+12.995522,77.559664,Rajajinagar,vehicle_theft,2,23,0,4,2023
+13.000884,77.555148,Rajajinagar,burglary,3,14,5,1,2023
+12.995219,77.558664,Rajajinagar,theft,2,14,5,6,2022
+12.99058,77.555747,Rajajinagar,robbery,4,9,6,12,2023
+12.99988,77.549068,Rajajinagar,theft,2,22,1,5,2024
+12.995283,77.551559,Rajajinagar,harassment,3,16,3,9,2024
+12.995401,77.558836,Rajajinagar,harassment,3,18,4,2,2024
+12.997455,77.560109,Rajajinagar,theft,2,21,6,4,2022
+12.995658,77.556155,Rajajinagar,robbery,4,9,6,5,2022
+12.992847,77.554378,Rajajinagar,theft,2,23,5,4,2024
+12.999645,77.554703,Rajajinagar,theft,2,1,0,12,2022
+12.998958,77.554051,Rajajinagar,assault,4,21,4,2,2023
+12.999866,77.555393,Rajajinagar,theft,2,13,2,10,2023
+12.998471,77.558681,Rajajinagar,theft,2,11,2,10,2024
+12.993754,77.5531,Rajajinagar,chain_snatch,3,19,2,10,2023
+12.999249,77.553627,Rajajinagar,vehicle_theft,2,17,2,9,2022
+13.002643,77.557885,Rajajinagar,harassment,3,19,1,9,2023
+13.000919,77.554109,Rajajinagar,robbery,4,17,1,12,2022
+12.991234,77.556958,Rajajinagar,theft,2,12,2,11,2024
+12.996945,77.549106,Rajajinagar,assault,4,18,6,2,2022
+12.993957,77.554047,Rajajinagar,burglary,3,18,2,11,2023
+12.996622,77.546978,Rajajinagar,harassment,3,14,4,11,2023
+12.992341,77.556574,Rajajinagar,robbery,4,23,0,2,2024
+12.993145,77.557281,Rajajinagar,robbery,4,6,5,5,2024
+12.994685,77.545402,Rajajinagar,chain_snatch,3,11,4,3,2023
+13.00172,77.556048,Rajajinagar,burglary,3,8,2,12,2024
+12.998967,77.553831,Rajajinagar,theft,2,4,6,10,2023
+12.987877,77.554276,Rajajinagar,robbery,4,3,2,12,2024
+12.994845,77.55711,Rajajinagar,assault,4,6,5,5,2022
+12.994009,77.551168,Rajajinagar,theft,2,19,4,8,2023
+12.990523,77.556219,Rajajinagar,assault,4,10,0,11,2022
+12.997985,77.555685,Rajajinagar,vehicle_theft,2,9,6,10,2024
+12.994444,77.557844,Rajajinagar,burglary,3,22,3,6,2023
+12.986366,77.554331,Rajajinagar,harassment,3,10,0,3,2022
+12.906015,77.585003,JP Nagar,assault,4,20,0,6,2022
+12.909175,77.591448,JP Nagar,theft,2,11,6,7,2023
+12.910382,77.595833,JP Nagar,robbery,4,16,0,11,2024
+12.907028,77.59635,JP Nagar,assault,4,18,1,5,2023
+12.905496,77.592258,JP Nagar,assault,4,15,5,9,2022
+12.909894,77.59301,JP Nagar,theft,2,20,5,5,2023
+12.91091,77.585201,JP Nagar,theft,2,18,2,3,2022
+12.910301,77.587428,JP Nagar,chain_snatch,3,9,6,11,2024
+12.915069,77.593782,JP Nagar,theft,2,8,2,12,2023
+12.908964,77.587263,JP Nagar,burglary,3,21,6,2,2024
+12.912349,77.587316,JP Nagar,robbery,4,7,0,8,2024
+12.918035,77.594175,JP Nagar,assault,4,16,6,4,2022
+12.908026,77.590552,JP Nagar,harassment,3,7,3,6,2024
+12.904766,77.589281,JP Nagar,theft,2,12,3,10,2022
+12.91054,77.59998,JP Nagar,burglary,3,0,1,10,2024
+12.913316,77.589158,JP Nagar,assault,4,23,6,3,2024
+12.91078,77.590969,JP Nagar,theft,2,18,1,3,2023
+12.908869,77.598671,JP Nagar,robbery,4,18,2,3,2023
+12.910083,77.590529,JP Nagar,burglary,3,6,0,7,2022
+12.906261,77.59043,JP Nagar,assault,4,6,5,3,2022
+12.905632,77.593716,JP Nagar,chain_snatch,3,0,5,4,2024
+12.914535,77.589663,JP Nagar,robbery,4,13,2,8,2022
+12.908563,77.597624,JP Nagar,chain_snatch,3,21,0,4,2022
+12.910121,77.593171,JP Nagar,theft,2,18,3,12,2024
+12.914761,77.603595,JP Nagar,harassment,3,13,1,1,2022
+12.909398,77.586532,JP Nagar,chain_snatch,3,16,4,10,2024
+12.917291,77.59515,JP Nagar,chain_snatch,3,8,2,8,2024
+12.906438,77.591357,JP Nagar,theft,2,14,3,9,2023
+12.911817,77.596463,JP Nagar,theft,2,14,2,6,2023
+12.91143,77.590302,JP Nagar,chain_snatch,3,19,4,8,2022
+12.907752,77.596626,JP Nagar,chain_snatch,3,10,1,6,2023
+12.911785,77.586367,JP Nagar,theft,2,13,1,11,2023
+12.908782,77.604126,JP Nagar,theft,2,6,1,9,2024
+12.911722,77.591271,JP Nagar,harassment,3,13,4,11,2023
+12.923875,77.544333,Banashankari,theft,2,10,5,5,2024
+12.927351,77.534616,Banashankari,chain_snatch,3,23,2,9,2022
+12.920006,77.537148,Banashankari,harassment,3,8,4,4,2024
+12.928553,77.548845,Banashankari,theft,2,18,6,6,2023
+12.928509,77.548236,Banashankari,theft,2,5,6,3,2024
+12.924999,77.550188,Banashankari,burglary,3,23,2,3,2023
+12.922827,77.546556,Banashankari,chain_snatch,3,18,1,2,2023
+12.926548,77.539002,Banashankari,harassment,3,17,0,6,2022
+12.927794,77.549713,Banashankari,vehicle_theft,2,18,1,6,2024
+12.926901,77.543423,Banashankari,theft,2,11,0,5,2024
+12.918375,77.537878,Banashankari,harassment,3,21,4,2,2023
+12.921196,77.547663,Banashankari,chain_snatch,3,15,0,11,2022
+12.927708,77.549521,Banashankari,assault,4,8,3,8,2023
+12.935558,77.550096,Banashankari,burglary,3,17,5,10,2023
+12.923533,77.544858,Banashankari,assault,4,8,5,7,2024
+12.921548,77.547057,Banashankari,robbery,4,6,6,5,2022
+12.918975,77.545186,Banashankari,assault,4,10,3,12,2024
+12.921023,77.550722,Banashankari,burglary,3,21,1,2,2022
+12.925599,77.543525,Banashankari,chain_snatch,3,17,0,6,2022
+12.93068,77.548977,Banashankari,chain_snatch,3,16,1,2,2024
+12.928088,77.546784,Banashankari,chain_snatch,3,18,3,1,2022
+12.925816,77.544955,Banashankari,robbery,4,22,6,3,2023
+12.92351,77.547334,Banashankari,chain_snatch,3,9,4,1,2024
+12.922807,77.544238,Banashankari,harassment,3,23,2,1,2024
+12.928927,77.55351,Banashankari,theft,2,7,6,10,2024
+12.918839,77.545634,Banashankari,harassment,3,22,0,10,2022
+12.925303,77.548756,Banashankari,theft,2,18,3,12,2022
+12.923207,77.545694,Banashankari,robbery,4,8,0,7,2022
+12.924778,77.543094,Banashankari,assault,4,15,2,4,2022
+12.930887,77.541755,Banashankari,theft,2,8,5,2,2022
+12.924457,77.541846,Banashankari,theft,2,3,3,3,2022
+12.933278,77.545418,Banashankari,robbery,4,11,1,7,2023
+12.926367,77.545587,Banashankari,theft,2,20,4,2,2022
+12.929777,77.543706,Banashankari,robbery,4,13,1,10,2024
+12.921954,77.550206,Banashankari,theft,2,21,3,2,2022
+12.923708,77.542781,Banashankari,theft,2,0,5,8,2023
+12.921478,77.548241,Banashankari,theft,2,12,3,7,2024
+12.921915,77.547677,Banashankari,burglary,3,13,4,10,2023
+12.924888,77.543801,Banashankari,harassment,3,8,0,12,2022
+12.923471,77.546079,Banashankari,theft,2,19,0,3,2023
+12.922877,77.543553,Banashankari,theft,2,20,0,10,2023
+12.920752,77.545606,Banashankari,vehicle_theft,2,17,3,3,2024
+12.927117,77.543151,Banashankari,theft,2,0,6,12,2024
+12.924747,77.551572,Banashankari,harassment,3,15,3,10,2024
+12.921153,77.5468,Banashankari,robbery,4,19,5,7,2024
+12.92439,77.551965,Banashankari,vehicle_theft,2,14,2,12,2023
+12.921591,77.550145,Banashankari,harassment,3,20,1,10,2023
+12.922567,77.544121,Banashankari,theft,2,5,6,12,2023
+12.924438,77.550946,Banashankari,assault,4,7,6,8,2024
+12.920815,77.555896,Banashankari,theft,2,0,1,10,2022
+12.93217,77.545154,Banashankari,robbery,4,19,6,7,2024
+12.92806,77.541536,Banashankari,assault,4,9,4,1,2023
